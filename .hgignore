@@ -1,0 +1,9 @@
+syntax: glob
+*.local
+.subversion/auth
+.subversion/README.txt
+.subversion/servers
+.vim/.netrwhist
+.vim/doc/tags
+zsh/.zcompdump
+zsh/history.local.*

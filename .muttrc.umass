@@ -1,0 +1,5 @@
+source "~/.rc/.muttrc"
+source "~/.rc/.muttrc.gmail"
+source "~/.rc/.muttrc.local"
+
+set	smtp_url="smtp://mail.cs.umass.edu/"

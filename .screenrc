@@ -1,0 +1,56 @@
+## ben's .screenrc
+# refer to http://www.math.fu-berlin.de/~guckes/setup/screenrc for some nice
+# configuration ideas.
+#
+# $Id: .screenrc,v 1.6 2007-03-16 19:54:58 ben Exp $
+#
+
+# automatically detach the screen session when the screen process receives a
+# hangup signal.  you can then resume the session with `screen -r'.
+autodetach on
+
+# when making a hard copy of a screen, don't wipe an existing hardcopy before
+# writing the file.
+hardcopy_append on
+
+# background color erase: makes copying w/ the mouse in xterm not
+# grab tons of spaces.
+defbce on
+
+## bind delete to backspace (no longer needed now that screen's terminfo
+## files are installed)
+# bindkey -d -k kD stuff "\010"
+
+# maintain a neat little status bar at the bottom of the screen
+#caption always "%{kG}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kG}%?%+Lw%?"
+caption always "%{kG} %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{-}%?%+Lw%? %= %D %C%a "
+
+bell_msg " hello from window %n! "
+
+# prefer beeps
+vbell off
+vbell_msg " boooooo! "
+
+# show the first screen by default
+select 0
+
+# make scrolling work
+termcapinfo xterm ti@:te@
+defscrollback 1000
+
+# screen writes to the terminal's hardstatus line
+termcapinfo xterm "hs:ts=\E]2;:fs=\007:ds=\E]2;$HOST\007"
+
+# keybindings
+bind ^[ resize -1
+bind ^] resize +1
+
+# multiuser support
+# to use: (me) C-a:acladd user2
+#      (user2) screen -x ben/
+# off by default.
+multiuser off
+
+# ssh agent support
+unsetenv SSH_AUTH_SOCK
+setenv SSH_AUTH_SOCK $HOME/.screen/sasock.$HOST

@@ -1,0 +1,15 @@
+[auth]
+store-passwords = no
+
+[tunnels]
+ssh = /usr/bin/ssh -x
+
+[miscellany]
+enable-auto-props = yes
+
+[auto-props]
+*.pdf = svn:mime-type=application/pdf
+*.ps = svn:mime-type=application/postscript
+*.eps = svn:mime-type=application/postscript
+*.ai = svn:mime-type=application/postscript
+*.graffle= svn:mime-type=application/octet-stream

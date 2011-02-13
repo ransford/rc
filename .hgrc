@@ -1,0 +1,10 @@
+[ui]
+%include ~/.rc/.hgrc.local
+ignore = ~/.rc/hgignore.global
+editor = hgeditor
+
+[extensions]
+hgext.convert=
+
+[alias]
+untrack = rm -Af
