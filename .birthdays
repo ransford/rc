@@ -1,0 +1,140 @@
+# mm dd name <person@somewhere.edu>
+## format of this file:
+## multiple lines with the same mm/dd are okay.
+01 03 me <ben@ransford.org>
+01 03 Alaska, state of (1959)
+01 04 Alex Jaeckh <haveralex@hotmail.com> (1980)
+01 05 Patrick Danial <pat@terakeet.net> (1980)
+01 05 Elvira Poiesz
+01 05 Katerina Linn Sielken (2006)
+01 10 Tom Lehman <lehmant@deshaw.com>
+01 10 Donald E. Knuth
+01 11 Tobin Ritt <tobinr@verizon.net>
+01 13 Teo Salatino (1980)
+01 23 Judith Bowers <JudithBowers@aol.com>
+01 23 Mac Cummings <mac@terakeet.net> (1979)
+01 25 Michael Wolff <mwwolff@alumni.princeton.edu> (1979)
+01 25 Amanda Abelita <abelitaa@chi.osu.edu>
+01 25 Chris Ingraham <cmaxon@gmail.com>
+02 02 James Joyce
+02 06 Pat Rector <prector@twcny.rr.com>
+02 06 Bob Marley (1945)
+02 07 Sir James Murray (1837)
+02 09 Emily Quinlan <equinlan@hotmail.com>
+02 12 Charles Darwin (1809)
+02 12 Abraham Lincoln (1809)
+02 13 Justin Zhang <justin@iseeyousee.com>
+02 14 John Endries <sith@myrealbox.com>
+02 14 Shane Clark <ssclark@cs.umass.edu>
+02 15 Hank Ransford's death
+02 17 Cheryl Barkauskas <barkausk@deshaw.com>
+02 20 Kurt Cobain
+02 21 David Foster Wallace (1962)
+02 24 Mary Lovejoy <mcl17@cornell.edu>
+02 25 Rose Chernila (2005)
+03 04 Jordan Erenrich <jse8@cornell.edu>
+03 08 Bryan Renne <bpr7@cornell.edu> (1980)
+03 12 David Sielken <dwsielken@gmail.com>
+03 20 John Bicket <jbicket@mit.edu>
+03 20 Cruz Roel Abelita (2009)
+03 22 Kasmira Smarzo <kasmira.smarzo@gmail.com> (1979)
+03 27 Joey Chernila <joschernila@gmail.com> (1979)
+03 27 Kristen Marceda (1980)
+04 01 Rick Rector
+04 07 Thomas S. Heydt-Benjamin <tshb@acm.org> (1977)
+04 09 Ryan Long <ryanlong@myrealbox.com>
+04 10 Sadie Pearl Chernila (2003)
+04 11 Kurt Vonnegut's death
+04 16 Elana Blatt <emb28@cornell.edu>
+04 21 Linda Sielken
+04 23 Vladimir Nabokov (1899-1977)
+04 26 P. T. Cat (1997)
+04 27 Meg Eisenhauer Barry <m_eisenhauer@mac.com> (1981)
+04 27 Liesl Jane Barry (2008)
+04 30 Anthony Persaud <asp15@cornell.edu>
+05 02 Julian Wright (2005)
+05 05 V. T. Cat (1997)
+05 06 Steve Ransford <steve@ransford.org> (1944)
+05 06 c. chris erway <chris@erway.org> (1980)
+05 06 Beckett Madden-Woods <beckett@beckettmw.com> (1980)
+05 06 Sigmund Freud (1856)
+05 06 Evan Goris <evangoris@yahoo.com>
+05 08 Thomas Pynchon
+05 09 Chris Amrose
+05 12 Nora Oberfield <noberfield@yahoo.com> (1980)
+05 12 David Marvasti <dkm@activistchat.com>
+05 13 Siobhan Cully <smc56@cornell.edu>
+05 16 Lane Rettig <rettigl@deshaw.com>
+05 20 John Blitzer <jcb36@cornell.edu>
+05 21 Albrecht Dürer (1471)
+05 23 Russell Farhang <farhang@deshaw.com>
+05 23 Michael Poiesz <igmike@gmail.com> (1979)
+05 24 Diana Eng <DiDi2483@aol.com>
+05 26 Matthew Sielken <sielken@gmail.com>
+05 30 Jennifer Chunn <jenchunn@gmail.com>
+05 30 Henry Franklin Fu (2009)
+06 04 Aviva Thomas Barry (2005)
+06 04 Chris Howe <capability@gmail.com> (1980)
+06 11 Dan Halperin <dhalperi@cs.washington.edu>
+06 21 Hannah Richards <hannahxrichards@gmail.com>
+06 22 Sasha Cupic <cupics@deshaw.com>
+06 24 Pat Kongsilp <runpacorun@gmail.com> (1979)
+06 29 Rachel Santamaria-Schwartz <rachel.ss@gmail.com>
+07 04 Roger Brunson <rkb4@cornell.edu>
+07 06 Kaitlin Doherty (1980)
+07 06 Josh Pelton <peltonjp@hotmail.com>
+07 06 George W. Bush
+07 06 Daniel Gyllstrom <dpg@cs.umass.edu> (1981)
+07 08 Michael Manning <michaeldmanning@gmail.com>
+08 01 Nate Wicka <wickan@deshaw.com>
+08 04 Barack Obama
+08 08 Roger Federer (1981)
+08 13 Thomas Barry (1981)
+08 14 Shirley Fung <shirleyf@mit.edu>
+08 15 India (1947)
+08 15 Pakistan (1947)
+08 16 Matt & Andrea's marriage
+08 19 Elizabeth Berry (1972)
+08 28 J. W. von Goethe (1749)
+08 29 Dave & Linda's marriage
+08 29 Michael "King of Pop" Jackson
+08 29 David Stenglein <stengled@deshaw.com>
+09 05 Sophie Taylor <sophie.taylor@gmx.net> (1978)
+09 11 Tina Erway (chris's mom)
+09 12 David Foster Wallace's death (2008)
+09 18 Samuel Johnson (1709)
+09 19 Andrea Sielken
+09 27 James Brief <jbrief@aecom.yu.edu>
+09 28 Gillian Boudreau <gsb12@cornell.edu>
+10 07 Melissa Nicolls <melissa.nicolls@gmail.com> (1979)
+10 07 Cornell University (1865)
+10 15 Linus Foster Ransford (2008)
+10 17 Seth Block <blocks@deshaw.com>
+10 19 Dustin Smith <destiny@twcny.rr.com> (1979)
+10 24 Tricia Loomis <tricialoomis@hotmail.com>
+11 01 Megan Sielken (1979) <mlsielken@gmail.com>
+11 05 Lila Maren Indigo Bleier-Long (2009)
+11 11 Kurt Vonnegut, Jr. (1922)
+11 16 Adam Rector (1987)
+11 16 Elena Levine (Brian Levine's daughter) (2008)
+11 17 Max Breiteneicher
+11 19 Seth Gregory
+12 01 Brian Barfoot (1979) <brianpbarfoot@yahoo.com>
+12 01 Amy Bleier <bleier@fordham.edu>
+12 01 Linda Hawkins
+12 02 Cathy Erway (1981) <cathy@erway.org>
+12 04 Wassily Kandinksy
+12 06 Sophia Abelita
+12 06 Peyton Sherwood <sherwood@deshaw.com>
+12 07 Noam Chomsky (1928)
+12 11 John Kerry
+12 11 Alana Chernila <alanachernila@gmail.com> (1978)
+12 16 Colleen McKay <faxine1>
+12 18 Noel Nocciolo <noelandthecity@hotmail.com>
+12 18 Paul Klee (1879)
+12 22 Srinivasa Ramanujan
+12 24 Brad Hoover
+12 25 Jesus H. Christ
+12 25 Sir Isaac Newton (1642)
+12 25 Brooke Bishop
+12 26 Angie Gregory (1980)
