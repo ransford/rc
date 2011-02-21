@@ -1,5 +1,4 @@
 *.local
-.birthdays
 .gitconfig
 .subversion/README.txt
 .subversion/servers
