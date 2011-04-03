@@ -67,7 +67,7 @@ if has("gui_running")
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
   else
-    set guifont=Monaco:h12
+    set guifont=Mensch_Regular:h12
     set lines=32 columns=86
   endif
 endif
