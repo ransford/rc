@@ -4,3 +4,4 @@
 .subversion/README.txt
 .subversion/servers
 zsh/.zcompdump
+.vim/.netrwhist
