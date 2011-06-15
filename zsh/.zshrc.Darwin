@@ -1,1 +1,5 @@
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias lsa='ls -AFGl'
+alias gvimt='gvim --remote-tab-silent'
+alias less='less -R'
+alias locate='mdfind -name'
