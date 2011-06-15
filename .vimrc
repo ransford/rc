@@ -94,19 +94,24 @@ if &t_Co > 2 || has("gui_running")
   hi DiffText term=reverse cterm=bold ctermbg=red
 
   " trailing whitespace
-  if has("matchadd")
-    highlight ExtraWhitespace ctermbg=red guibg=Red
-    autocmd InsertEnter * if exists('w:mie') | call matchdelete(w:mil) | endif | let w:mie=matchadd('ExtraWhitespace', '/\s\+\%#\@<!$/')
-    autocmd InsertLeave * if exists('w:mil') | call matchdelete(w:mie) | endif | let w:mil=matchadd('ExtraWhitespace', '/\s\+$/')
+  " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+  if v:version >= 702
     " lines over 80 chars
     " http://vim.wikia.com/wiki/Detect_window_creation_with_WinEnter
-    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-    autocmd VimEnter * match OverLength /\%81v.\+/
+    autocmd VimEnter * let w:m1=matchadd('Error', '\%>80v.\+', -1)
     autocmd VimEnter * autocmd WinEnter * let w:created=1
     autocmd VimEnter * let w:created=1
-    autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('OverLength', '/\%81v.\+/') | endif
+
+    " http://vim.wikia.com/wiki/Highlight_long_lines
+    autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('Error', '\%>80v.\+', -1) | endif
+    autocmd BufWinLeave * call clearmatches()
   endif
+
 endif
 
 if has("gui_macvim")
