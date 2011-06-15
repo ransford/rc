@@ -195,7 +195,7 @@ zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # case-insensitive matching on mac
-if [[ `uname -s` = "Darwin" ]]; then
+if [[ $PLATFORM = "Darwin" ]]; then
     zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 fi
 
@@ -212,6 +212,10 @@ if [[ -o LOGIN ]]; then
 fi
 
 setprompt
+
+if [[ -r "$ZDOTDIR/.zshrc.$PLATFORM" ]]; then
+    . "$ZDOTDIR/.zshrc.$PLATFORM"
+fi
 
 # load local modifications
 if [[ -r $ZDOTDIR/.zshrc.local ]]; then
