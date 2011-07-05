@@ -42,9 +42,12 @@ syn region htmlBold     start=/\\\@<!\(^\|\A\)\@=_\@<!___\@!/         end=/\\\@<
 syn region htmlItalic   start=/\\\@<!\(^\|\A\)\@=_\@<!__\@!/          end=/\\\@<!_\@<!__\@!\($\|\A\)\@=/        contains=htmlBold,@Spell
 
 " [link](URL) | [link][id] | [link][]
-syn region mkdLink matchgroup=mkdDelimiter      start="\!\?\[" end="\]\ze\s*[[(]" contains=@Spell nextgroup=mkdURL,mkdID skipwhite oneline
+syn region mkdLink matchgroup=mkdDelimiter      start="\!\?\[" end="\]\ze\s*[[(]" contains=@Spell nextgroup=mkdURL,mkdID skipwhite
 syn region mkdID matchgroup=mkdDelimiter        start="\["    end="\]" contained
 syn region mkdURL matchgroup=mkdDelimiter       start="("     end=")"  contained
+" mkd  inline links:           protocol   optional  user:pass@       sub/domain                 .com, .co.uk, etc      optional port   path/querystring/hash fragment
+"                            ------------ _____________________ --------------------------- ________________________ ----------------- __
+syntax match   mkdInlineURL /https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*/
 
 " Link definitions: [id]: URL (Optional Title)
 " TODO handle automatic links without colliding with htmlTag (<URL>)
@@ -81,6 +84,27 @@ syn region htmlH6       start="^\s*######"              end="\($\|#\+\)" contain
 syn match  htmlH1       /^.\+\n=\+$/ contains=@Spell
 syn match  htmlH2       /^.\+\n-\+$/ contains=@Spell
 
+
+
+" fold region for headings
+syn region mkdHeaderFold
+    \ start="^\s*\z(#\+\)"
+    \ skip="^\s*\z1#\+"
+    \ end="^\(\s*#\)\@="
+    \ fold contains=TOP
+
+" fold region for lists
+syn region mkdListFold
+    \ start="^\z(\s*\)\*\z(\s*\)"
+    \ skip="^\z1 \z2\s*[^#]"
+    \ end="^\(.\)\@="
+    \ fold contains=TOP
+
+syn sync fromstart
+setlocal foldmethod=syntax
+
+
+
 "highlighting for Markdown groups
 HtmlHiLink mkdString	    String
 HtmlHiLink mkdCode          String
@@ -91,6 +115,7 @@ HtmlHiLink mkdRule          Identifier
 HtmlHiLink mkdLineBreak     Todo
 HtmlHiLink mkdLink          htmlLink
 HtmlHiLink mkdURL           htmlString
+HtmlHiLink mkdInlineURL     htmlLink
 HtmlHiLink mkdID            Identifier
 HtmlHiLink mkdLinkDef       mkdID
 HtmlHiLink mkdLinkDefTarget mkdURL
