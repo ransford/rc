@@ -28,7 +28,7 @@ if [[ -z "${PATHRC_LOADED}" ]]; then
   loadpathrcs
 fi
 
-export MANPATH=`manpath`
+[[ -n `whence manpath` ]] && export MANPATH=`manpath`
 
 # environment variables (my own preferences)
 for x in vim emacs vi; do
