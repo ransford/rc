@@ -1,6 +1,7 @@
 *.local
 .birthdays
 .gitconfig
+.subversion/auth
 .subversion/README.txt
 .subversion/servers
 zsh/.zcompdump
