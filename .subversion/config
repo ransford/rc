@@ -13,3 +13,4 @@ enable-auto-props = yes
 *.eps = svn:mime-type=application/postscript
 *.ai = svn:mime-type=application/postscript
 *.graffle= svn:mime-type=application/octet-stream
+*.key = svn:mime-type=application/octet-stream
