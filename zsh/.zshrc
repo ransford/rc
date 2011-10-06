@@ -124,14 +124,31 @@ function _screen() {
     HOST=$HOST \screen $*
 }
 
+function _getgitbranch() {
+    local GB; GB=$(git branch --no-color 2>/dev/null)
+    export __GITBRANCH=`echo ${${${(f)GB}:#  *}/\* /}`
+    [[ -n "${__GITBRANCH}" ]] && echo "Git branch is now ${__GITBRANCH}"
+}
+typeset -ga chpwd_functions
+chpwd_functions+=_getgitbranch
+
+function _getgitbranchprompt() {
+    [[ -n "${__GITBRANCH}" ]] && \
+        print -n "%{$fg[blue]%}[${__GITBRANCH}]%{$terminfo[sgr0]%}"
+}
+
 # run before each prompt
 function precmd() {
+    local _H; _H="$(history $(( $HISTCMD - 1 )))"
+    case "${_H/ ##[[:digit:]]## ##/}" in
+        git*) _getgitbranch ;;
+    esac
     case $TERM in
         screen*) print -n "\ek${ZSH_NAME}\e\\"
     esac
 }
 
-# run before each command runs
+# run after each command is read but before it's executed
 function preexec() {
     case $TERM in
         screen*) print -n "\ek${1%%[[:space:]]*}\e\\" ;;
@@ -154,6 +171,7 @@ function setprompt () {
     _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%~%<<"
     _PR_ECODEPART='%(?..%B%?%b!)'
     PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}:%U${_PR_DIRPART}%u%B%#%b '
+    RPROMPT='$(_getgitbranchprompt)'
 }
 
 # gpg-decrypt a file
