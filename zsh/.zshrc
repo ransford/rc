@@ -127,7 +127,6 @@ function _screen() {
 function _getgitbranch() {
     local GB; GB=$(git branch --no-color 2>/dev/null)
     export __GITBRANCH=`echo ${${${(f)GB}:#  *}/\* /}`
-    [[ -n "${__GITBRANCH}" ]] && echo "Git branch is now ${__GITBRANCH}"
 }
 typeset -ga chpwd_functions
 chpwd_functions+=_getgitbranch
