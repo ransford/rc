@@ -4,6 +4,13 @@
 # this file is sourced before zprofile, zshrc, and zlogin, regardless of
 # whether the current invocation of zsh is a login shell.
 #
+__DEBUG=false
+
+function _DEBUG () {
+    [[ "${__DEBUG}" == 'true' ]] || return 0
+    print "DEBUG: $*"
+}
+_DEBUG "Loading .zshenv"
 
 # useful variables
 export PLATFORM=`uname -s`
@@ -63,3 +70,5 @@ export LSCOLORS="CxfxcxdxBxegedabagacad"
 if [[ -r $ZDOTDIR/.zshenv.local ]]; then
     . $ZDOTDIR/.zshenv.local
 fi
+
+_DEBUG "Done loading .zshenv"

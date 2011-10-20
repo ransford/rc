@@ -12,8 +12,11 @@
 # this file is sourced *before* zshrc and zlogin.  it is sourced *only* if zsh
 # is being launched as a login shell.
 #
+_DEBUG "Loading .zprofile"
 
 # load local modifications
 if [[ -r $ZDOTDIR/.zprofile.local ]]; then
     . $ZDOTDIR/.zprofile.local
 fi
+
+ _DEBUG "Done loading .zprofile"

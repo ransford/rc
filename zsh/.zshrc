@@ -12,6 +12,7 @@
 # this file is sourced *only* for an interactive shell, regardless of whether
 # it's a login shell.
 #
+_DEBUG "Loading .zshrc"
 
 ################################################################################
 # modules
@@ -238,3 +239,4 @@ fi
 if [[ -r $ZDOTDIR/.zshrc.local ]]; then
     . $ZDOTDIR/.zshrc.local
 fi
+_DEBUG "Done loading .zshrc"

@@ -1,6 +1,10 @@
+_DEBUG "Loading .zshrc.Darwin"
+
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias gvimt='gvim --remote-tab-silent'
 alias less='less -R'
 alias locate='mdfind -name'
 alias lsa='ls -AFGl'
 alias screensaver='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+
+_DEBUG "Done loading .zshrc.Darwin"

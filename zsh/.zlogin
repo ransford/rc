@@ -13,8 +13,11 @@
 # for example, a new zsh running inside a new xterm or screen session will
 # *not* source this file.
 #
+_DEBUG "Loading .zlogin"
 
 # load local modifications
 if [[ -r $ZDOTDIR/.zlogin.local ]]; then
     . $ZDOTDIR/.zlogin.local
 fi
+
+_DEBUG "Done loading .zlogin"
