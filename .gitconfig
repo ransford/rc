@@ -1,0 +1,14 @@
+[color]
+	ui = auto
+[user]
+	name = Ben Ransford
+	email = ransford@cs.umass.edu
+
+[alias]
+	co = checkout
+	st = status
+	di = diff
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[core]
+	autocrlf = input
+	excludesfile = ~/.rc/.gitignore.global
