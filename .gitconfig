@@ -9,6 +9,10 @@
 	st = status
 	di = diff
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	serve = instaweb
 [core]
 	autocrlf = input
 	excludesfile = ~/.rc/.gitignore.global
+[instaweb]
+	httpd=webrick
+	port=8123
