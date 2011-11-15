@@ -16,3 +16,7 @@
 [instaweb]
 	httpd=webrick
 	port=8123
+[web]
+	browser = mychrome
+[browser "mychrome"]
+	cmd = open -a 'Google Chrome'
