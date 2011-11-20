@@ -126,8 +126,9 @@ function _screen() {
 }
 
 function _getgitbranch() {
-    local GB; GB=$(git branch --no-color 2>/dev/null)
-    export __GITBRANCH=`echo ${${${(f)GB}:#  *}/\* /}`
+    __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || \
+                __GITBRANCH="(unnamed)"
+    export __GITBRANCH="${__GITBRANCH##refs/heads/}"
 }
 typeset -ga chpwd_functions
 chpwd_functions+=_getgitbranch
