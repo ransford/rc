@@ -125,6 +125,9 @@ map :uu :set fileformat=unix<CR>
 map <F7> :make<CR>
 imap <ESC>s <C-R>="[" . $USER . strftime(" %c") . "]"<CR>
 
+" alias :W to :w for slow shift fingers
+cnoreabbrev W w
+
 " skip paren matching -- it's too slow
 if version >= 700
   ":NoMatchParen and :DoMatchParen toggle this
