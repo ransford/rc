@@ -126,8 +126,7 @@ function _screen() {
 }
 
 function _getgitbranch() {
-    __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || \
-                __GITBRANCH="(unnamed)"
+    __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || __GITBRANCH=''
     export __GITBRANCH="${__GITBRANCH##refs/heads/}"
 }
 typeset -ga chpwd_functions
