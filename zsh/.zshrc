@@ -128,6 +128,7 @@ function _screen() {
 function _getgitbranch() {
     __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || __GITBRANCH=''
     export __GITBRANCH="${__GITBRANCH##refs/heads/}"
+    return 0
 }
 typeset -ga chpwd_functions
 chpwd_functions+=_getgitbranch
@@ -135,6 +136,7 @@ chpwd_functions+=_getgitbranch
 function _getgitbranchprompt() {
     [[ -n "${__GITBRANCH}" ]] && \
         print -n "%{$fg[blue]%}[${__GITBRANCH}]%{$terminfo[sgr0]%}"
+    return 0
 }
 
 # run before each prompt
