@@ -139,8 +139,7 @@ function _getgitbranchprompt() {
 
 # run before each prompt
 function precmd() {
-    local _H; _H="$(history $(( $HISTCMD - 1 )))"
-    case "${_H/ ##[[:digit:]]## ##/}" in
+    case "$history[$[HISTCMD-1]]" in
         git*) _getgitbranch ;;
     esac
     case $TERM in
