@@ -158,7 +158,7 @@ function preexec() {
 
 # emulate chpwd_functions hook for zsh < 4.3.5
 # http://ruderich.org/simon/config/zshrc
-if [[ $ZSH_VERSION != (4.3.<5->|4.<4->*|<5->*) ]]; then
+if [[ $ZSH_VERSION < '4.3' ]]; then
     function chpwd() {
         for function in $chpwd_functions; do
             $function $@
