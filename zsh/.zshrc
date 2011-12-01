@@ -182,7 +182,7 @@ function setprompt () {
     _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%~%<<"
     _PR_ECODEPART='%(?..%B%?%b!)'
     PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}:%U${_PR_DIRPART}%u%B%#%b '
-    RPROMPT='$(_getgitbranchprompt)'
+    if [[ ! $ZSH_VERSION < '4.3' ]]; then RPROMPT='$(_getgitbranchprompt)'; fi
 }
 
 # gpg-decrypt a file
