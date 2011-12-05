@@ -18,6 +18,7 @@ set laststatus=2        " status line always (set to 1 to restrict to >1-win cas
 set modelines=2         " check the first and last 2 lines of the file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
+set nofoldenable        " h8 folding
 set nostartofline       " keep the cursor in its column as much as possible
 set nonumber            " don't use line numbering
 set showcmd             " show commands as they're being typed
