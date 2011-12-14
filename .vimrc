@@ -49,6 +49,7 @@ if has("autocmd")
  autocmd FileType {python,perl} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                        \ cinkeys=0{,0},0),:,!^F,o,O,e
  autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                      \ makeprg=ant\ -emacs
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
  autocmd FileType mail setlocal ai et nosi tw=76 spell
  autocmd FileType *tex setlocal ai et nosi tw=80 spell
