@@ -14,8 +14,8 @@ set dir=~/.tmp          " where to keep swap files
 set display=uhex        " display unprintable characters as <xx> (hex)
 set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
 set history=50          " keep 50 lines of command line history
-set laststatus=2        " status line always (set to 1 to restrict to >1-win case)
-set modelines=2         " check the first and last 2 lines of the file for modeline
+set laststatus=2        " status line always (=1 to restrict to >1-win case)
+set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
 set nofoldenable        " h8 folding
@@ -27,7 +27,7 @@ set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
 set statusline=%3*%m\ %2*%F%1*\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
-set viminfo='20,\"50    " read/write .viminfo, not more than 50 lines of registers
+set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
 
 filetype plugin on      " enable ftplugins
@@ -43,9 +43,11 @@ if has("autocmd")
  autocmd BufNewFile,BufRead *.txt     setlocal ai et nosi tw=80 spell
  autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
  autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
- autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et spell
+ autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
+                                                   \ spell
 
- autocmd FileType {python,perl} setlocal ts=4 sw=4 tw=80 ai et cindent si cinkeys=0{,0},0),:,!^F,o,O,e
+ autocmd FileType {python,perl} setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                       \ cinkeys=0{,0},0),:,!^F,o,O,e
  autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
  autocmd FileType mail setlocal ai et nosi tw=76 spell
@@ -80,7 +82,8 @@ if &t_Co > 2 || has("gui_running")
   hi User1 ctermbg=blue ctermfg=white   guibg=#336680 guifg=white
   hi User2 ctermbg=blue ctermfg=magenta guibg=#336680 guifg=white
   hi User3 ctermbg=blue ctermfg=red     guibg=#336680 guifg=yellow
-  hi Error term=reverse,underline cterm=bold,underline ctermfg=red ctermbg=black guifg=White guibg=Red
+  hi Error term=reverse,underline cterm=bold,underline ctermfg=red
+         \ ctermbg=black guifg=White guibg=Red
   hi ErrorMsg term=bold ctermfg=red ctermbg=black
   hi CursorColumn guibg=Grey30
   hi CursorLine guibg=Grey30
@@ -109,7 +112,9 @@ if &t_Co > 2 || has("gui_running")
     autocmd VimEnter * let w:created=1
 
     " http://vim.wikia.com/wiki/Highlight_long_lines
-    autocmd WinEnter * if !exists('w:created') | let w:m1=matchadd('Error', '\%>80v.\+', -1) | endif
+    autocmd WinEnter * if !exists('w:created')
+                       \ | let w:m1=matchadd('Error', '\%>80v.\+', -1)
+                       \ | endif
     autocmd BufWinLeave * call clearmatches()
   endif
 
