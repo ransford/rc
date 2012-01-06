@@ -23,7 +23,7 @@ defbce on
 
 # maintain a neat little status bar at the bottom of the screen
 #caption always "%{kG}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kG}%?%+Lw%?"
-caption always "%{kG} %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{-}%?%+Lw%? %= %D %C%a "
+caption always "%{kG} %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{-}%?%+Lw%? %= %D %c%a %l "
 
 bell_msg " hello from window %n! "
 
