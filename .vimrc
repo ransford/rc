@@ -26,6 +26,7 @@ set showmatch           " at ),],}, briefly jump the cursor to opening bracket
 set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
+set spelllang=en_us     " we're #1
 set statusline=%3*%m\ %2*%F%1*\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
 set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
@@ -91,6 +92,10 @@ if &t_Co > 2 || has("gui_running")
 
   " color for search results
   hi Search cterm=bold ctermbg=red ctermfg=yellow
+
+  " color for misspellings
+  hi clear SpellBad
+  hi SpellBad term=bold cterm=bold ctermfg=red
 
   " vimdiff highlighting (help diff)
   hi DiffAdd term=bold cterm=bold ctermfg=yellow
