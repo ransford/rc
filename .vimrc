@@ -95,7 +95,7 @@ if &t_Co > 2 || has("gui_running")
 
   " color for misspellings
   hi clear SpellBad
-  hi SpellBad term=bold cterm=bold ctermfg=red
+  hi SpellBad term=bold cterm=bold ctermfg=red gui=bold guifg=red
 
   " vimdiff highlighting (help diff)
   hi DiffAdd term=bold cterm=bold ctermfg=yellow
