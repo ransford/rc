@@ -30,6 +30,7 @@ set spelllang=en_us     " we're #1
 set statusline=%3*%m\ %2*%F%1*\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
 set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
+set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
 
 filetype plugin on      " enable ftplugins
 
