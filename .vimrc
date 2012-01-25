@@ -32,8 +32,6 @@ set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
 set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
 
-filetype plugin on      " enable ftplugins
-
 helptags ~/.rc/.vim/doc
 
 """""
@@ -55,6 +53,8 @@ if has("autocmd")
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
  autocmd FileType mail setlocal ai et nosi tw=76 spell
  autocmd FileType *tex setlocal ai et nosi tw=80 spell
+ autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
+                                \ | runtime macros/matchit.vim
 endif
 
 
@@ -146,6 +146,8 @@ if version >= 700
   ":NoMatchParen and :DoMatchParen toggle this
   let loaded_matchparen = 1
 endif
+
+filetype plugin on      " enable ftplugins
 
 " load local mods
 if filereadable(expand("~/.vimrc.local"))
