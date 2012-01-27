@@ -44,6 +44,9 @@ for x in vim emacs vi; do
         break
     fi
 done
+if [[ -n `whence svneditor` ]]; then
+    export SVN_EDITOR=svneditor
+fi
 
 # prefer ssh to rsh for cvs stuff
 export CVS_RSH=ssh
