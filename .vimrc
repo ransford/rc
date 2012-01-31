@@ -34,6 +34,8 @@ set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
 
 helptags ~/.rc/.vim/doc
 
+filetype plugin on      " enable ftplugins
+
 """""
 " autocmd stuff, like emacs's hooks
 """""
@@ -146,8 +148,6 @@ if version >= 700
   ":NoMatchParen and :DoMatchParen toggle this
   let loaded_matchparen = 1
 endif
-
-filetype plugin on      " enable ftplugins
 
 " load local mods
 if filereadable(expand("~/.vimrc.local"))
