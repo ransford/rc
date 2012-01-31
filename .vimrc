@@ -47,6 +47,8 @@ if has("autocmd")
  autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
  autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                    \ spell
+ autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
+ autocmd FileType gitcommit DiffGitCached | setlocal ro
 
  autocmd FileType {python,perl} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                        \ cinkeys=0{,0},0),:,!^F,o,O,e
