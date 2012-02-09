@@ -21,6 +21,7 @@ set hlsearch            " highlight search results
 set nofoldenable        " h8 folding
 set nostartofline       " keep the cursor in its column as much as possible
 set nonumber            " don't use line numbering
+set scrolloff=3         " keep the cursor N lines away from top/bottom edges
 set showcmd             " show commands as they're being typed
 set showmatch           " at ),],}, briefly jump the cursor to opening bracket
 set showmode            " show a message when in insert/replace/visual mode
