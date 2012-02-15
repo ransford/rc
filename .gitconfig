@@ -14,8 +14,9 @@
 	autocrlf = input
 	excludesfile = ~/.rc/.gitignore.global
 [instaweb]
-	httpd=webrick
-	port=8123
+	httpd = webrick
+	port = 8180
+	local = true
 [web]
 	browser = mychrome
 [browser "mychrome"]
