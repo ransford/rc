@@ -27,7 +27,7 @@ set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
 set spelllang=en_us     " we're #1
-set statusline=%3*%m\ %2*%F%1*\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
+set statusline=%m\ %F\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
 set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
 set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
@@ -91,32 +91,14 @@ if &t_Co > 2 || has("gui_running")
   else
     set background=dark
   endif
-  " these colors are used in the status bar; see statusline
-  hi User1 ctermbg=blue ctermfg=white   guibg=#336680 guifg=white
-  hi User2 ctermbg=blue ctermfg=magenta guibg=#336680 guifg=white
-  hi User3 ctermbg=blue ctermfg=red     guibg=#336680 guifg=yellow
-  hi Error term=reverse,underline cterm=bold,underline ctermfg=red
-         \ ctermbg=black guifg=White guibg=Red
-  hi ErrorMsg term=bold ctermfg=red ctermbg=black
-  hi CursorColumn guibg=Grey30
-  hi CursorLine guibg=Grey30
 
-  " color for search results
-  hi Search cterm=bold ctermbg=red ctermfg=yellow
-
-  " color for misspellings
-  hi clear SpellBad
-  hi SpellBad term=bold cterm=bold ctermfg=red gui=bold guifg=red
-
-  " vimdiff highlighting (help diff)
-  hi DiffAdd term=bold cterm=bold ctermfg=yellow
-  hi DiffChange term=underline ctermbg=red
-  hi DiffDelete ctermbg=black ctermfg=darkgray
-  hi DiffText term=reverse cterm=bold ctermbg=red
+  hi default link CursorColumn LineNr
+  hi default link CursorLine LineNr
+  hi default link SpellBad WarningMsg
 
   " trailing whitespace
   " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-  highlight ExtraWhitespace ctermbg=red guibg=red
+  hi default link ExtraWhitespace ErrorMsg
   autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
   autocmd InsertLeave * match ExtraWhitespace /\s\+$/
   autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
