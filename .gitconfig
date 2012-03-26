@@ -9,7 +9,16 @@
 	st = status
 	di = diff
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	vssvn = log --oneline git-svn..
 	serve = instaweb
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
 [core]
 	autocrlf = input
 	excludesfile = ~/.rc/.gitignore.global
