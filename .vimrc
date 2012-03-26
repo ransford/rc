@@ -5,7 +5,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set background=dark
 " set softtabstop=4     " 4-space tabs
 set ai                  " always set autoindenting on
 set backupdir=~/.tmp    " where to keep backups
@@ -68,7 +67,6 @@ endif
 " gui stuff, for gvim or vim -g
 """""
 if has("gui_running")
-  colorscheme zenburn   " pretty color scheme
   set cursorline        " subtly highlight the current line
   set guioptions-=T     " don't need to see toolbar buttons
 
@@ -87,6 +85,12 @@ endif
 " switch syntax highlighting on when the terminal has colors
 if &t_Co > 2 || has("gui_running")
   syntax on
+  colorscheme solarized " pretty color scheme
+  if has("gui_running")
+    set background=light
+  else
+    set background=dark
+  endif
   " these colors are used in the status bar; see statusline
   hi User1 ctermbg=blue ctermfg=white   guibg=#336680 guifg=white
   hi User2 ctermbg=blue ctermfg=magenta guibg=#336680 guifg=white
