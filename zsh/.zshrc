@@ -214,6 +214,7 @@ alias httpsrvpwd='python -m SimpleHTTPServer'
 alias gpge='gpg --encrypt'
 alias s=sudo
 alias rmbr=remember
+alias gdiff='git diff --no-index'
 
 ################################################################################
 # completion
