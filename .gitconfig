@@ -8,6 +8,7 @@
 	co = checkout
 	st = status
 	di = diff
+	pul = pull
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 	vssvn = log --oneline git-svn..
 	serve = instaweb
