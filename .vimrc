@@ -73,7 +73,7 @@ if has("gui_running")
   set guioptions-=T     " don't need to see toolbar buttons
 
   if (has("win32"))
-    set guifont=Ubuntu_Mono:h16:cANSI
+    set guifont=Ubuntu_Mono:h12:cANSI
     set lines=40 columns=90
 
     " make shift-insert paste (well, as long as MiddleMouse pastes)
