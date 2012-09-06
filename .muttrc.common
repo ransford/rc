@@ -23,6 +23,7 @@ set	indent_string="> "	# indent replies with this
 set	ispell="aspell -e -c"	# spell checker (default ispell)
 set	mail_check=900		# check for new mail every n seconds
 unset	mark_old		# leave N on new messages
+unset	markers			# no "+" on line wrapping
 set	mask="."		# show all IMAP folders
 unset	metoo			# exclude myself from group replies
 #set	mime_forward=ask-no	# forward as MIME attachment(s)?
