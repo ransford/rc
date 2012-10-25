@@ -169,8 +169,8 @@ fi
 # prompt stuff -- eww.
 function setprompt () {
     case $TERM in
-        xterm*)     _PR_TITLEPART=$'%{\e]0;%n@%m:%~\a%}' ;;
-        screen*)    _PR_TITLEPART=$'%{\e_:\005 (\005t)    %n@%m    %~\e\\%}' ;;
+        xterm*)     _PR_TITLEPART=$'%{\e]0;%m:%~\a%}' ;;
+        screen*)    _PR_TITLEPART=$'%{\e_:\005 (\005t)    %m    %~\e\\%}' ;;
         *)          _PR_TITLEPART='' ;;
     esac
     _PR_USERPART="%n@%m"
