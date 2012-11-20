@@ -88,11 +88,7 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   colorscheme solarized " pretty color scheme
-  if has("gui_running")
-    set background=light
-  else
-    set background=dark
-  endif
+  set background=dark
 
   hi default link CursorColumn LineNr
   hi default link CursorLine LineNr
