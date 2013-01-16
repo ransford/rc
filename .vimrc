@@ -128,6 +128,7 @@ map :ud :set fileformat=dos<CR>
 map :uu :set fileformat=unix<CR>
 map <F7> :make<CR>
 imap <ESC>s <C-R>="[" . $USER . strftime(" %c") . "]"<CR>
+imap <ESC><C-j> <C-R>=system("pwgen -c -n -y 16 1 -s -y")<CR>
 
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
