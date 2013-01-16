@@ -70,7 +70,7 @@ hdr_order Date: From: To: Cc: Bcc: Subject: Reply-To: Organization: X-Mailer: Us
 # email was misappropriated to us, say what folder it should have gone to.
 folder-hook . 'set index_format=" %Z %[%b %d %H:%M]  %-21.21L (%4c) %s"'
 
-source "~/.rc/mutt-colors-solarized-dark-16.muttrc"
+source "~/.rc/.muttrc.solarized"
 
 # macros
 macro compose v		"<edit-from>^Uf_<tab>"			"Choose From address"
