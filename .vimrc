@@ -124,11 +124,11 @@ endif
 
 " nice keyboard mappings
 map Q gq
-map :ud :set fileformat=dos<CR>
-map :uu :set fileformat=unix<CR>
-map <F7> :make<CR>
-imap <ESC>s <C-R>="[" . $USER . strftime(" %c") . "]"<CR>
-imap <ESC><C-j> <C-R>=system("pwgen -c -n -y 16 1 -s -y")<CR>
+
+let mapleader=","
+map <Leader>d :set fileformat=dos<CR>
+map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
+map <Leader>u :set fileformat=unix<CR>
 
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
