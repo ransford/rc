@@ -1,1 +1,3 @@
 text/html; elinks -dump %s; copiousoutput; nametemplate=%s.html
+image/*; open %s
+application/*; open %s
