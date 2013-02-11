@@ -31,3 +31,5 @@
 	browser = mychrome
 [browser "mychrome"]
 	cmd = open -a 'Google Chrome'
+[branch]
+	autosetuprebase = always
