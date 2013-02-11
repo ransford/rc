@@ -1,5 +1,3 @@
-source "~/.rc/.muttrc.common"
-
 set header_cache="~/.tmp/mutt.header-cache"
 set tmpdir="~/.tmp"
 
@@ -12,3 +10,4 @@ folder-hook $record 'set index_format=" %Z %[%b %d %H:%M]  %-21.21t (%4c) %s"'
 
 source "~/.rc/.muttrc.gmail"
 source "~/.rc/.muttrc.local"
+source "~/.rc/.muttrc.common"
