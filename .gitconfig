@@ -2,7 +2,7 @@
 	ui = auto
 [user]
 	name = Ben Ransford
-	email = ransford@cs.umass.edu
+	email = ben@ransford.org
 
 [alias]
 	co = checkout
