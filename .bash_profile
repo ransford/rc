@@ -8,4 +8,8 @@ if [ -r .bashrc ]; then
 	source .bashrc
 fi
 
+# environment variables
+PATH="$HOME/bin/$(uname -s).$(uname -m):$HOME/bin:$PATH"
+export EDITOR=vim
+
 uptime
