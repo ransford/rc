@@ -17,6 +17,7 @@ set laststatus=2        " status line always (=1 to restrict to >1-win case)
 set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
+set mouse=n             " scroll with the mouse in normal (not insert) mode
 set nofoldenable        " h8 folding
 set nostartofline       " keep the cursor in its column as much as possible
 set nonumber            " don't use line numbering
