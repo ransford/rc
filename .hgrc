@@ -6,6 +6,7 @@ editor = hgeditor
 [extensions]
 hgext.convert=
 rebase=
+mq=
 
 [alias]
 untrack = rm -Af
