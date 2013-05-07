@@ -55,8 +55,10 @@ if has("autocmd")
  autocmd FileType gitcommit DiffGitCached | setlocal ro
  autocmd FileType gitcommit wincmd x
 
- autocmd FileType {python,perl} setlocal ts=4 sw=4 tw=80 ai et cindent si
-                                       \ cinkeys=0{,0},0),:,!^F,o,O,e
+ autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
+ autocmd FileType python setlocal ts=4 sw=4 tw=80 ai cindent si
+                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
  autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                       \ makeprg=ant\ -emacs
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
