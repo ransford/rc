@@ -14,6 +14,7 @@ set display=uhex        " display unprintable characters as <xx> (hex)
 set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
 set history=50          " keep 50 lines of command line history
 set laststatus=2        " status line always (=1 to restrict to >1-win case)
+set listchars=tab:≫⋅,trail:░
 set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
@@ -95,6 +96,8 @@ if &t_Co > 2 || has("gui_running")
   hi default link CursorColumn LineNr
   hi default link CursorLine LineNr
   hi default link SpellBad WarningMsg
+  hi default link NonText Comment
+  hi default link SpecialKey Comment
 
   " trailing whitespace
   " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
