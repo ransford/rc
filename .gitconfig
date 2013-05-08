@@ -7,6 +7,7 @@
 [alias]
 	co = checkout
 	st = status
+	stt = status --untracked-files=no
 	di = diff
 	pul = pull
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
