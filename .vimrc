@@ -46,25 +46,26 @@ filetype plugin on      " enable ftplugins
 if has("autocmd")
  autocmd BufNewFile,BufRead *.R       setlocal ft=R
  autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
- autocmd BufNewFile,BufRead *.txt     setlocal ai et nosi tw=80 spell
  autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
  autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
  autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                    \ spell
+
  autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
  autocmd FileType gitcommit DiffGitCached | setlocal ro
- autocmd FileType gitcommit wincmd x
+ autocmd FileType gitcommit wincmd x " jump to commit msg window
 
- autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
+ autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType python setlocal ts=4 sw=4 tw=80 ai cindent si
+ autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si
+ autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                       \ makeprg=ant\ -emacs
- autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
- autocmd FileType mail setlocal ai et nosi tw=76 spell
- autocmd FileType *tex setlocal ai et nosi tw=80 spell
- autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
+ autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi list
+ autocmd FileType mail setlocal ai et nosi tw=76 spell list
+ autocmd FileType text setlocal ai nosi tw=80 spell
+ autocmd FileType *tex setlocal ai et nosi tw=80 spell list
+ autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell list
                                 \ | runtime macros/matchit.vim
 endif
 
