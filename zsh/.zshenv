@@ -12,10 +12,6 @@ function _DEBUG () {
 }
 _DEBUG "Loading .zshenv"
 
-# useful variables
-export PLATFORM=`uname -s`
-export ARCH="`uname -s`.`uname -m`"
-
 # load local path settings from $HOME/.pathrc
 function loadpathrcs () {
     local PATHRC="$HOME/.pathrc"
