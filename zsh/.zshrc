@@ -224,8 +224,10 @@ alias gdiff='git diff --no-index'
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+MYPLATFORM="$(uname -s)"
+
 # case-insensitive matching on mac
-if [[ $PLATFORM = "Darwin" ]]; then
+if [[ $MYPLATFORM = "Darwin" ]]; then
     zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 fi
 
@@ -243,8 +245,8 @@ fi
 
 setprompt
 
-if [[ -r "$ZDOTDIR/.zshrc.$PLATFORM" ]]; then
-    . "$ZDOTDIR/.zshrc.$PLATFORM"
+if [[ -r "$ZDOTDIR/.zshrc.$MYPLATFORM" ]]; then
+    . "$ZDOTDIR/.zshrc.$MYPLATFORM"
 fi
 
 # load local modifications
@@ -252,3 +254,5 @@ if [[ -r $ZDOTDIR/.zshrc.local ]]; then
     . $ZDOTDIR/.zshrc.local
 fi
 _DEBUG "Done loading .zshrc"
+
+unset MYPLATFORM
