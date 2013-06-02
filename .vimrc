@@ -7,6 +7,7 @@ set nocompatible
 
 " set softtabstop=4     " 4-space tabs
 set ai                  " always set autoindenting on
+set autochdir           " go to where the current file is
 set backupdir=~/.tmp    " where to keep backups
 set bs=2                " allow backspacing over everything in insert mode
 set dir=~/.tmp          " where to keep swap files
