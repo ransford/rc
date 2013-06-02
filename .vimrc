@@ -61,7 +61,7 @@ if has("autocmd")
  autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
  autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si list
-                                      \ makeprg=ant\ -emacs
+                                        \ tags=./tags,tags;
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi list
  autocmd FileType mail setlocal ai et nosi tw=76 spell list
  autocmd FileType text setlocal ai nosi tw=80 spell
@@ -137,6 +137,7 @@ let mapleader=","
 map <Leader>d :set fileformat=dos<CR>
 map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
 map <Leader>u :set fileformat=unix<CR>
+map <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j *.c"<Bar>cw<CR>
 
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
