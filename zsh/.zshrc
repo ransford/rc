@@ -169,19 +169,23 @@ fi
 # prompt stuff -- eww.
 function setprompt () {
     case $TERM in
-        xterm*)     _PR_TITLEPART=$'%{\e]0;%m:%~\a%}' ;;
+        xterm*)     _PR_TITLEPART=$'%{\e]0;%m:%1~\a%}' ;;
         screen*)    _PR_TITLEPART=$'%{\e_:\005 (\005t)    %m    %~\e\\%}' ;;
         *)          _PR_TITLEPART='' ;;
     esac
-    _PR_USERPART="%n@%m"
+    _PR_USERPART="%m:"
     if [[ $COLORTERM -eq 1 ]]; then
         _PR_TIMEPART="%{$fg[green]%}%T%{$terminfo[sgr0]%} "
+        _PR_ECODEPART="%(?..%B%{$fg[red]%}%?%{$terminfo[sgr0]%}%b!)"
+        _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%{$fg[blue]%}%1~%{$terminfo[sgr0]%}%u%<<"
+        _PR_INDICATORPART="%{$fg[cyan]%}%#%{$terminfo[sgr0]%} "
     else
-        _PR_TIMEPART="%B%T%b "
+        _PR_TIMEPART='%B%T%b '
+        _PR_ECODEPART='%(?..%B%?%b!)'
+        _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%1~%u%<<"
+        _PR_INDICATORPART='%B%#%b '
     fi
-    _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%~%<<"
-    _PR_ECODEPART='%(?..%B%?%b!)'
-    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}:%U${_PR_DIRPART}%u%B%#%b '
+    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}${_PR_DIRPART}${_PR_INDICATORPART}'
     if [[ ! $ZSH_VERSION < '4.3' ]]; then RPROMPT='$(_getgitbranchprompt)'; fi
 }
 
