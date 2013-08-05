@@ -206,6 +206,7 @@ function gpgd () {
 ################################################################################
 # aliases
 ################################################################################
+alias cd..='cd ..'
 alias cpwd='cd "`pwd -P`"'
 alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
 alias lpreven='lpr -o page-set=even'
