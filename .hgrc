@@ -7,6 +7,9 @@ editor = hgeditor
 hgext.convert=
 rebase=
 mq=
+color=
+progress=
 
 [alias]
 untrack = rm -Af
+show = diff -ctip
