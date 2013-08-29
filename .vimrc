@@ -44,7 +44,7 @@ filetype plugin on      " enable ftplugins
 " autocmd stuff, like emacs's hooks
 """""
 if has("autocmd")
- autocmd BufNewFile,BufRead *.R       setlocal ft=R
+ autocmd BufNewFile,BufRead *.R       setlocal ft=r
  autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
  autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
  autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
