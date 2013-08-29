@@ -34,5 +34,3 @@
 	cmd = open -a 'Google Chrome'
 [branch]
 	autosetuprebase = always
-[push]
-	default = simple
