@@ -59,7 +59,7 @@ if has("autocmd")
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
  autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType {c,cpp,java} setlocal ts=4 sw=4 tw=80 ai et cindent si list
+ autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si list
                                         \ tags=./tags,tags;
  autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi list
  autocmd FileType mail setlocal ai et nosi tw=76 spell list
