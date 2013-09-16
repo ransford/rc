@@ -14,6 +14,7 @@ set display=uhex        " display unprintable characters as <xx> (hex)
 set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
 set history=50          " keep 50 lines of command line history
 set laststatus=2        " status line always (=1 to restrict to >1-win case)
+set list                " show tabs and trailing spaces
 set listchars=tab:≫⋅,trail:░
 set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
@@ -55,18 +56,19 @@ if has("autocmd")
  autocmd FileType gitcommit DiffGitCached | setlocal ro
  autocmd FileType gitcommit wincmd x " jump to commit msg window
 
- autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si list
+ autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si list
+ autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
                                  \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si list
+ autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                         \ tags=./tags,tags;
- autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi list
- autocmd FileType mail setlocal ai et nosi tw=76 spell list
+ autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
+ autocmd FileType mail setlocal ai et nosi tw=76 spell
  autocmd FileType text setlocal ai nosi tw=80 spell
- autocmd FileType *tex setlocal ai et nosi tw=80 spell list
- autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell list
+ autocmd FileType *tex setlocal ai et nosi tw=80 spell
+ autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
                                 \ | runtime macros/matchit.vim
+ autocmd FileType make setlocal noet
 endif
 
 
