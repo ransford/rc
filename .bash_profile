@@ -9,7 +9,16 @@ if [ -r .bashrc ]; then
 fi
 
 # environment variables
-PATH="$HOME/bin/$(uname -s).$(uname -m):$HOME/bin:$PATH"
+## build up PATH backwards -- increasing specificity
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/noarch:$PATH"
+PATH="$HOME/bin/$(uname -s):$PATH"
+PATH="$HOME/bin/$(uname -s).$(uname -m):$PATH"
+
 export EDITOR=vim
+
+if [ -r .bash_profile.local ]; then
+	source .bash_profile.local
+fi
 
 uptime
