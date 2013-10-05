@@ -39,3 +39,6 @@ function _screen() {
 	\screen $* # call real screen
 }
 alias screen=_screen
+
+# shell options
+shopt -s globstar # ** is like recursive *
