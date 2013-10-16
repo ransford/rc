@@ -4,8 +4,8 @@ if [ -r /etc/profile ]; then
 	source /etc/profile
 fi
 
-if [ -r .bashrc ]; then
-	source .bashrc
+if [ -r "$HOME/.bashrc" ]; then
+	source "$HOME/.bashrc"
 fi
 
 # environment variables
@@ -17,8 +17,8 @@ PATH="$HOME/bin/$(uname -s).$(uname -m):$PATH"
 
 export EDITOR=vim
 
-if [ -r .bash_profile.local ]; then
-	source .bash_profile.local
+if [ -r "$HOME/.bash_profile.local" ]; then
+	source "$HOME/.bash_profile.local"
 fi
 
 uptime
