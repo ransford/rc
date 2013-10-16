@@ -25,8 +25,8 @@ for x in \
 		if [ "$INODE1" = "$INODE2" ]; then
 			dbg "$x: Already symlinked; doing nothing"
 		fi
-	elif [ -f "$x" ]; then
-		dbg "$x: File exists; doing nothing"
+	elif [ -e "$x" ]; then
+		dbg "$x: File or directory exists; doing nothing"
 	fi
 	continue
 
