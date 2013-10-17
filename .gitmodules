@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+[submodule ".vim/bundle/ag"]
+	path = .vim/bundle/ag
+	url = git://github.com/rking/ag.vim.git
