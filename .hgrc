@@ -9,6 +9,7 @@ rebase=
 mq=
 color=
 progress=
+record=
 
 [alias]
 untrack = rm -Af
