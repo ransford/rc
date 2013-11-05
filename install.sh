@@ -27,10 +27,11 @@ for x in \
 		if [ "$INODE1" = "$INODE2" ]; then
 			dbg "$x: Already symlinked; doing nothing"
 		fi
+		continue
 	elif [ -e "$x" ]; then
 		dbg "$x: File or directory exists; doing nothing"
+		continue
 	fi
-	continue
 
 	# make a symlink
 	ln -s "$RC/$x" .
