@@ -30,7 +30,8 @@ set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
 set spelllang=en_us     " we're #1
-set statusline=%m\ %F\ %y%(\ [#%n%R]%)%=%l/%L " pretty status line
+set statusline=%m\ %#StatusLineNC#%F%#StatusLine#\ %y%(\ [#%n%R]%)
+set statusline+=%=%#StatusLineNC#\ L%l/%L,c%c\ %#StatusLine#\  " pretty status line
 set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
 set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
