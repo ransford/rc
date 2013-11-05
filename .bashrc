@@ -1,16 +1,13 @@
 # .bashrc -- interactive non-login shells
 
+shopt -q login_shell || source "$HOME/.profile"
+
 # prompt
 PS1=$'\[\e]0;\h:\W\a\]'			# xterm title
 PS1=$PS1$'\[\e[1;31m\]$??'		# exit code $?
 PS1=$PS1$'\[\e[0;32m\]\A '		# current time (24h)
 PS1=$PS1$'\[\e[1;35m\]\u@\h:\W\$ '	# user@host:~$<space>
 PS1=$PS1$'\[\e[0m\]'			# end colors
-
-alias lsa='ls -lAF --color=auto'
-alias cpwd='cd "$(pwd -P)"'
-alias gdiff='git diff --no-index'
-alias s=sudo
 
 function _ssh_auth_save() {
 	[[ -n "$SSH_AUTH_SOCK" ]] || return 1
@@ -41,4 +38,7 @@ function _screen() {
 alias screen=_screen
 
 # shell options
-shopt -s globstar # ** is like recursive *
+test "$BASH_VERSINFO" == 4 && shopt -s globstar # ** is like recursive *
+
+# end on a happy note
+true

@@ -8,8 +8,10 @@ function dbg() {
 
 cd "$HOME"
 for x in \
+	.bashrc \
 	.emacs \
 	.gitconfig \
+	.profile \
 	.screenrc \
 	.subversion \
 	.tmux.conf \

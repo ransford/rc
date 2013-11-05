@@ -1,5 +1,4 @@
 # vim:et ts=4 sw=4
-# $Id: .zshrc,v 1.34 2008-06-18 16:13:24 ben Exp $
 #
 # order of execution:
 #   zshenv
@@ -12,7 +11,6 @@
 # this file is sourced *only* for an interactive shell, regardless of whether
 # it's a login shell.
 #
-_DEBUG "Loading .zshrc"
 
 ################################################################################
 # modules
@@ -38,8 +36,10 @@ setopt PROMPT_SUBST             # PROMPT="$foo"
 setopt HIST_IGNORE_DUPS         # don't save duplicates to history
 setopt HIST_IGNORE_SPACE        # don't save ' cmd' to history
 setopt HIST_NO_STORE            # don't save history commands to history
+unsetopt SHARE_HISTORY
+
 HISTFILE="$ZDOTDIR/history.local"
-SAVEHIST=500
+SAVEHIST=1000
 
 select-word-style bash          # bash-style word selection ('/' word boundary)
 
@@ -55,49 +55,9 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
     colors
 fi
 
-# color grep if available
-if echo x | grep --color=auto x >/dev/null 2>/dev/null; then
-    export GREP_OPTIONS="--color=auto" GREP_COLOR="0;35" # yellow
-fi
-
-# watch login/logout
-# add 'export WATCH=notme' to .zshrc.local to turn this on
-export WATCHFMT="%D %T: %B%n%b %a on %l from %M"
-
 ################################################################################
 # functions
 ################################################################################
-if [ -n "$BROWSER" ]; then
-    function google() {
-        local SAFE_QUERY_STRING
-        SAFE_QUERY_STRING=`echo -n "$*" | python -c 'import urllib,sys; print urllib.quote_plus(sys.stdin.read())'`
-        $BROWSER "http://www.google.com/search?q=${SAFE_QUERY_STRING}"
-    }
-fi
-
-if [[ $COLORTERM -eq 1 && -n `which colordiff` ]]; then
-    function svndiff() {
-        svn diff $@ | colordiff
-    }
-fi
-
-function cloak() {
-    if [[ ! -z "$HISTFILE" ]]; then
-        FOO_HISTFILE="$HISTFILE"
-        FOO_SAVEHIST="$SAVEHIST"
-        unset HISTFILE
-        unset SAVEHIST
-    fi
-}
-
-function uncloak() {
-    if [[ ! -z "$FOO_HISTFILE" ]]; then
-        HISTFILE="$FOO_HISTFILE"
-        SAVEHIST="$FOO_SAVEHIST"
-        unset FOO_HISTFILE
-        unset FOO_SAVEHIST
-    fi
-}
 
 function _ssh_auth_save() {
     if [[ -n "$SSH_AUTH_SOCK" ]] ; then
@@ -204,24 +164,6 @@ function gpgd () {
 }
 
 ################################################################################
-# aliases
-################################################################################
-alias cd..='cd ..'
-alias cpwd='cd "`pwd -P`"'
-alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
-alias lpreven='lpr -o page-set=even'
-alias lprodd='lpr -o page-set=odd'
-alias lsa="ls -AFl --color=auto"
-alias nl='nl -ba'
-alias screen='_screen'
-alias muttg='mutt -F ~/.rc/.muttrc.gmail'
-alias httpsrvpwd='python -m SimpleHTTPServer'
-alias gpge='gpg --encrypt'
-alias s=sudo
-alias rmbr=remember
-alias gdiff='git diff --no-index'
-
-################################################################################
 # completion
 ################################################################################
 # The following lines were added by compinstall
@@ -229,35 +171,15 @@ alias gdiff='git diff --no-index'
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-MYPLATFORM="$(uname -s)"
-
-# case-insensitive matching on mac
-if [[ $MYPLATFORM = "Darwin" ]]; then
-    zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-fi
-
 autoload -U compinit && compinit
 # End of lines added by compinstall
 
-################################################################################
-# miscellany
-################################################################################
-
-# do some stuff only for login shells
-if [[ -o LOGIN ]]; then
-    uptime
-fi
-
 setprompt
 
-if [[ -r "$ZDOTDIR/.zshrc.$MYPLATFORM" ]]; then
-    . "$ZDOTDIR/.zshrc.$MYPLATFORM"
-fi
-
-# load local modifications
-if [[ -r $ZDOTDIR/.zshrc.local ]]; then
-    . $ZDOTDIR/.zshrc.local
-fi
-_DEBUG "Done loading .zshrc"
-
+MYPLATFORM="$(uname -s)"
+test -r "$ZDOTDIR/.zshrc.$MYPLATFORM" && source "$ZDOTDIR/.zshrc.$MYPLATFORM"
 unset MYPLATFORM
+
+test -r "$ZDOTDIR/.zshrc.local" && source "$ZDOTDIR/.zshrc.local"
+
+true
