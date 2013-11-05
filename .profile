@@ -21,15 +21,13 @@ export PAGER=less
 export WATCHFMT="%D %T: %B%n%b %a on %l from %M"
 
 for x in vim vi emacs nano; do
-    if test -n `whereis "$x"`; then
+    type "$x" >/dev/null 2>&1 && {
         export EDITOR="$x"
         break
-    fi
+    }
 done
 
-if test -n `whereis svneditor`; then
-    export SVN_EDITOR=svneditor
-fi
+type svneditor >/dev/null 2>&1 && export SVN_EDITOR=svneditor
 
 # color grep if available
 if echo x | grep --color=auto x >/dev/null 2>/dev/null; then
