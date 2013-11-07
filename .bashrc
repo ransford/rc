@@ -3,8 +3,12 @@
 # bail out if shell is not interactive
 [ -z "$PS1" ] && return
 
-# if this is NOT a login shell, source .profile to get environment
-shopt -q login_shell || source "$HOME/.profile"
+# if this is NOT a login shell, source .profile to get environment if we don't
+# already have it (i.e., if we're not already in a shell that probably already
+# sourced .profile)
+shopt -q login_shell || {
+	[ "$SHLVL" -lt 2 ] && source "$HOME/.profile"
+}
 
 # prompt
 PS1=$'\[\e]0;\h:\W\a\]'			# xterm title
