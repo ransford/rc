@@ -15,7 +15,7 @@ set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
 set history=50          " keep 50 lines of command line history
 set laststatus=2        " status line always (=1 to restrict to >1-win case)
 set list                " show tabs and trailing spaces
-set listchars=tab:≫⋅,trail:░
+exec "set listchars=tab:\ubb\u6f0,trail:\u2591"
 set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
