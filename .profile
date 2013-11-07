@@ -2,15 +2,22 @@
 
 test -r /etc/profile && source /etc/profile
 
-# $PATH munging
-for x in \
-	"$HOME/bin" \
-	"$HOME/bin/noarch" \
-	"$HOME/bin/$(uname -s)" \
-	"$HOME/bin/$(uname -s).$(uname -m)" \
-	; do
-	test -d "$x" && PATH="$x:$PATH"
-done
+function path_prepend() {
+	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+		PATH="$1${PATH:+":$PATH:"}"
+	fi
+}
+
+function path_append() {
+	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+		PATH="${PATH:+"$PATH:"}$1"
+	fi
+}
+
+path_prepend "$HOME/bin"
+path_prepend "$HOME/bin/noarch"
+path_prepend "$HOME/bin/$(uname -s)"
+path_prepend "$HOME/bin/$(uname -s).$(uname -m)"
 
 ################################################################################
 # environment variables
