@@ -66,11 +66,11 @@ test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
 test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
 
+# is this bash?  if so, load .bashrc
+# (zsh will load .zshrc on its own)
+test -n "$BASH_VERSION" && shopt -q login_shell && source "$RC/.bashrc"
+
 # clean up local vars
 unset MACHINE
 unset OS
 unset RC
-
-# is this bash?  if so, load .bashrc
-# (zsh will load .zshrc on its own)
-test -n "$BASH_VERSION" && shopt -q login_shell && source "$RC/.bashrc"
