@@ -62,5 +62,3 @@ test -r "$HOME/.profile.local" && source "$HOME/.profile.local"
 
 # is this bash?  if so, load .bashrc
 test -n "$BASH_VERSION" && shopt -q login_shell && source "$HOME/.bashrc"
-
-uptime

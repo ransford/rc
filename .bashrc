@@ -1,5 +1,6 @@
 # .bashrc -- interactive non-login shells
 
+# if this is NOT a login shell, source .profile to get environment
 shopt -q login_shell || source "$HOME/.profile"
 
 # prompt
@@ -39,6 +40,8 @@ alias screen=_screen
 
 # shell options
 test "$BASH_VERSINFO" == 4 && shopt -s globstar # ** is like recursive *
+
+uptime
 
 # end on a happy note
 true

@@ -180,6 +180,8 @@ MYPLATFORM="$(uname -s)"
 test -r "$ZDOTDIR/.zshrc.$MYPLATFORM" && source "$ZDOTDIR/.zshrc.$MYPLATFORM"
 unset MYPLATFORM
 
+uptime
+
 test -r "$ZDOTDIR/.zshrc.local" && source "$ZDOTDIR/.zshrc.local"
 
 true
