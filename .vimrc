@@ -154,6 +154,18 @@ if version >= 700
   let loaded_matchparen = 1
 endif
 
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+
+function! HLNext (blinktime)
+    set invcursorline
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    set invcursorline
+    redraw
+endfunction
+
 " load local mods
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
