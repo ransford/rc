@@ -1,6 +1,6 @@
-# .profile -- interactive bash-ish shells
-
-test -r /etc/profile && source /etc/profile
+# .profile
+# bash: executed in login shell
+# zsh: manually executed from .zprofile in login shell
 
 function path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -66,9 +66,9 @@ test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
 test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
 
-# is this bash?  if so, load .bashrc
-# (zsh will load .zshrc on its own)
-test -n "$BASH_VERSION" && shopt -q login_shell && source "$RC/.bashrc"
+# is this an interactive bash shell?  if so, load .bashrc
+[ -n "$BASH_VERSION" ] && [ -n "$PS1" ] && source "$RC/.bashrc"
+# (zsh will load .zshrc on its own, doesn't need to be told to)
 
 # clean up local vars
 unset MACHINE

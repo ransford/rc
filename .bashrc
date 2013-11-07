@@ -1,5 +1,8 @@
 # .bashrc -- interactive non-login shells
 
+# bail out if shell is not interactive
+[ -z "$PS1" ] && return
+
 # if this is NOT a login shell, source .profile to get environment
 shopt -q login_shell || source "$HOME/.profile"
 
