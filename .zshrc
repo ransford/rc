@@ -38,7 +38,7 @@ setopt HIST_IGNORE_SPACE        # don't save ' cmd' to history
 setopt HIST_NO_STORE            # don't save history commands to history
 unsetopt SHARE_HISTORY
 
-HISTFILE="$ZDOTDIR/history.local"
+HISTFILE="$ZDOTDIR/.zhistory.local"
 SAVEHIST=1000
 
 select-word-style bash          # bash-style word selection ('/' word boundary)
@@ -176,9 +176,12 @@ autoload -U compinit && compinit
 
 setprompt
 
-MYPLATFORM="$(uname -s)"
-test -r "$ZDOTDIR/.zshrc.$MYPLATFORM" && source "$ZDOTDIR/.zshrc.$MYPLATFORM"
-unset MYPLATFORM
+OS="$(uname -s)"
+MACHINE="$(uname -m)"
+test -r "$ZDOTDIR/.zshrc.$OS" && source "$ZDOTDIR/.zshrc.$OS"
+test -r "$ZDOTDIR/.zshrc.$OS.$MACHINE" && source "$ZDOTDIR/.zshrc.$OS.$MACHINE"
+unset MACHINE
+unset OS
 
 uptime
 

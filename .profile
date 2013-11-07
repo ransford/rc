@@ -14,6 +14,11 @@ function path_append() {
 	fi
 }
 
+# unset these later
+RC="$HOME/.rc"
+OS="$(uname -s)"
+MACHINE="$(uname -m)"
+
 path_prepend "$HOME/bin"
 path_prepend "$HOME/bin/noarch"
 path_prepend "$HOME/bin/$(uname -s)"
@@ -49,16 +54,23 @@ alias cpwd='cd "$(pwd -P)"'
 alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
 alias lpreven='lpr -o page-set=even'
 alias lprodd='lpr -o page-set=odd'
-alias lsa="ls -AFl --color=auto"
 alias nl='nl -ba'
-alias muttg='mutt -F ~/.rc/.muttrc.gmail'
+alias muttg="mutt -F $RC/.muttrc.gmail"
 alias httpsrvpwd='python -m SimpleHTTPServer'
 alias gpge='gpg --encrypt'
 alias s='sudo'
 alias rmbr='remember'
 alias gdiff='git diff --no-index'
 
-test -r "$HOME/.profile.local" && source "$HOME/.profile.local"
+test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
+test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
+test -r "$RC/.profile.local" && source "$RC/.profile.local"
+
+# clean up local vars
+unset MACHINE
+unset OS
+unset RC
 
 # is this bash?  if so, load .bashrc
-test -n "$BASH_VERSION" && shopt -q login_shell && source "$HOME/.bashrc"
+# (zsh will load .zshrc on its own)
+test -n "$BASH_VERSION" && shopt -q login_shell && source "$RC/.bashrc"

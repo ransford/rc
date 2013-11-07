@@ -1,8 +1,7 @@
-# case-insensitive matching
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-
-alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-alias gvimt='gvim --remote-tab-silent'
+if test -x /Applications/MacVim.app/Contents/MacOS/Vim; then
+	alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+	alias gvimt='gvim --remote-tab-silent'
+fi
 alias less='less -R'
 alias locate='mdfind -name'
 alias lsa='ls -AFGl'

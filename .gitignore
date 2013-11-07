@@ -3,6 +3,6 @@
 .subversion/auth
 .subversion/README.txt
 .subversion/servers
-zsh/.zcompdump
+.zcompdump
 .vim/.netrwhist
 .vim/spell/
