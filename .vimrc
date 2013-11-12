@@ -29,6 +29,7 @@ set showmatch           " at ),],}, briefly jump the cursor to opening bracket
 set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
+set spellfile=~/.vim/spell/en.utf-8.add " my own words
 set spelllang=en_us     " we're #1
 set statusline=%m\ %#StatusLineNC#%F%#StatusLine#\ %y%(\ [#%n%R]%)
 set statusline+=%=%#StatusLineNC#\ L%l/%L,c%c\ %#StatusLine#\  " pretty status line
