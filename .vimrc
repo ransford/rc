@@ -80,16 +80,15 @@ endif
 if has("gui_running")
   set cursorline        " subtly highlight the current line
   set guioptions-=T     " don't need to see toolbar buttons
+  set lines=40 columns=90
 
   if (has("win32"))
-    set guifont=Ubuntu_Mono:h12:cANSI
-    set lines=40 columns=90
+    set guifont=Ubuntu_Mono:h14:cANSI
 
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
   else
-    set guifont=Ubuntu_Mono:h14
-    set lines=32 columns=86
+    set guifont=Ubuntu_Mono:h16
   endif
 endif
 
