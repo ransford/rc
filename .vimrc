@@ -15,7 +15,7 @@ set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
 set history=50          " keep 50 lines of command line history
 set laststatus=2        " status line always (=1 to restrict to >1-win case)
 set list                " show tabs and trailing spaces
-set listchars=tab:≫⋅,trail:░
+exec "set listchars=tab:\ubb\u6f0,trail:\u2591"
 set modelines=2         " check first and last 2 lines of file for modeline
 set nobackup            " keep a backup file
 set hlsearch            " highlight search results
@@ -29,6 +29,7 @@ set showmatch           " at ),],}, briefly jump the cursor to opening bracket
 set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
+set spellfile=~/.vim/spell/en.utf-8.add " my own words
 set spelllang=en_us     " we're #1
 set statusline=%m\ %#StatusLineNC#%F%#StatusLine#\ %y%(\ [#%n%R]%)
 set statusline+=%=%#StatusLineNC#\ L%l/%L,c%c\ %#StatusLine#\  " pretty status line
@@ -79,16 +80,15 @@ endif
 if has("gui_running")
   set cursorline        " subtly highlight the current line
   set guioptions-=T     " don't need to see toolbar buttons
+  set lines=40 columns=90
 
   if (has("win32"))
-    set guifont=Ubuntu_Mono:h12:cANSI
-    set lines=40 columns=90
+    set guifont=Ubuntu_Mono:h14:cANSI
 
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
   else
-    set guifont=Ubuntu_Mono:h14
-    set lines=32 columns=86
+    set guifont=Ubuntu_Mono:h16
   endif
 endif
 
@@ -153,6 +153,17 @@ if version >= 700
   ":NoMatchParen and :DoMatchParen toggle this
   let loaded_matchparen = 1
 endif
+
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+
+function! HLNext (blinktime)
+  set invcursorline
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  set invcursorline
+  redraw
+endfunction
 
 " load local mods
 if filereadable(expand("~/.vimrc.local"))

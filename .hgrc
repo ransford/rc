@@ -10,7 +10,17 @@ mq=
 color=
 progress=
 record=
+transplant=
+graphlog=
+pager=
 
 [alias]
 untrack = rm -Af
 show = diff -ctip
+
+[color]
+mode = ansi
+
+[pager]
+pager = LESS='FRX' less
+ignore = version, help, update, cat
