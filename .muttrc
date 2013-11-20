@@ -8,6 +8,5 @@ source	$alias_file
 set record
 folder-hook $record 'set index_format=" %Z %[%b %d %H:%M]  %-21.21t (%4c) %s"'
 
-source "~/.rc/.muttrc.gmail"
 source "~/.rc/.muttrc.local"
 source "~/.rc/.muttrc.common"

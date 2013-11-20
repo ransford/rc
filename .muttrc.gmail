@@ -1,4 +1,4 @@
-# source "~/.rc/.muttrc.common"
+source "~/.rc/.muttrc"
 set tmpdir="~/.tmp"
 
 set	imap_user="ben@g.ransford.org"
