@@ -11,7 +11,6 @@ unset	confirmappend		# don't ask if we're sure we want to append to a mailbox
 set	copy			# save outgoing messages
 set	delete			# don't overconfirm message deletion
 unset	edit_hdrs		# don't edit headers with message
-set	envelope_from		# set envelope 'From ' header too
 set	fast_reply		# don't prompt for reply information
 set	folder_format=" %N : %8s %-20f %d"	# format for folder list
 unset	followup_to		# use the Mail-Followup-To: header
@@ -44,6 +43,7 @@ set	reverse_name		# send as whomever we received
 unset	reverse_realname	# override reply realname with real realname
 set	sendmail_wait=-1	# don't wait for sendmail to finish
 set	smart_wrap		# wrap long lines at word boundaries
+set	use_envelope_from	# set envelope From
 set	wrapmargin=10		# how many blank cols from rt. edge to leave
 set	sort=threads		# view by threads
 set	sort_aux=date		# sorting within $sort
