@@ -144,6 +144,7 @@ map <Leader>d :set fileformat=dos<CR>
 map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
 map <Leader>u :set fileformat=unix<CR>
 map <Leader>f :execute "Ag! " . expand("<cword>")<CR>
+map <Leader>c :let &colorcolumn=col(".")<CR>
 
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
