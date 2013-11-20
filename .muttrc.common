@@ -87,9 +87,11 @@ macro index \el		"<limit>~A<return>"			"Show all messages (remove limit)"
 macro index \em		"<tag-pattern>~d >1m !~O<return>"	"Tag read messages older than 1 month"
 macro index \ew		"<tag-pattern>~d >7d<return>"		"Tag all messages older than 1 week"
 macro index y		"<change-folder>?<tab>"			"Show incoming mail folders"
+macro index A		"<save-message>=.Archive<return>"	"Archive message"
 
 bind pager <tab>	next-unread
 macro pager y		"<change-folder>?<tab>"			"Show incoming mail folders"
+macro pager A		"<save-message>=.Archive<return>"	"Archive message"
 
 # view some stuff automatically.
 auto_view text/html
