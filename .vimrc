@@ -51,6 +51,7 @@ if has("autocmd")
  autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
  autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
  autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
+ autocmd BufNewFile,BufRead *.json    setlocal ft=javascript
  autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                    \ spell
 
