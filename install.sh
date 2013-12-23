@@ -9,6 +9,7 @@ function dbg() {
 cd "$HOME"
 for x in \
 	.bashrc \
+	.bash_profile \
 	.emacs \
 	.gitconfig \
 	.profile \

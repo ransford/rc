@@ -1,4 +1,5 @@
 # .bashrc -- interactive non-login shells
+# should produce NO console output!
 
 # bail out if shell is not interactive
 [ -z "$PS1" ] && return
@@ -6,9 +7,7 @@
 # if this is NOT a login shell, source .profile to get environment if we don't
 # already have it (i.e., if we're not already in a shell that probably already
 # sourced .profile)
-shopt -q login_shell || {
-	[ "$SHLVL" -lt 2 ] && source "$HOME/.profile"
-}
+shopt -q login_shell || source "$HOME/.profile"
 
 # prompt
 PS1=$'\[\e]0;\h:\W\a\]'			# xterm title
@@ -18,7 +17,7 @@ PS1=$PS1$'\[\e[1;35m\]\u@\h:\W\$ '	# user@host:~$<space>
 PS1=$PS1$'\[\e[0m\]'			# end colors
 
 function _ssh_auth_save() {
-	[[ -n "$SSH_AUTH_SOCK" ]] || return 1
+	[[ -n "$SSH_AUTH_SOCK" ]] || return 0
 
 	# avoid loops
 	[[ "$SSH_AUTH_SOCK" = "$HOME/.screen/sasock.$HOST" ]] && return 0
@@ -40,7 +39,7 @@ function _ssh_auth_save() {
 
 function _screen() {
 	export HOST=$(hostname -s)
-	_ssh_auth_save || return 1
+	_ssh_auth_save
 	\screen $* # call real screen
 }
 alias screen=_screen

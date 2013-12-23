@@ -1,6 +1,7 @@
 # .profile
 # bash: executed in login shell
 # zsh: manually executed from .zprofile in login shell
+# should produce NO console output!
 
 function path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -65,10 +66,6 @@ alias gdiff='git diff --no-index'
 test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
 test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
-
-# is this an interactive bash shell?  if so, load .bashrc
-[ -n "$BASH_VERSION" ] && [ -n "$PS1" ] && source "$RC/.bashrc"
-# (zsh will load .zshrc on its own, doesn't need to be told to)
 
 # clean up local vars
 unset MACHINE
