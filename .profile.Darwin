@@ -1,5 +1,8 @@
-if test -x /Applications/MacVim.app/Contents/MacOS/Vim; then
-	alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+if test -x /opt/local/bin/vim; then
+	alias vim=/opt/local/bin/vim
+fi
+if test -x /Applications/MacPorts/MacVim.app/Contents/MacOS/Vim; then
+	alias gvim='/Applications/MacPorts/MacVim.app/Contents/MacOS/Vim -g'
 	alias gvimt='gvim --remote-tab-silent'
 fi
 alias less='less -R'
