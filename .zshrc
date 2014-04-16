@@ -40,6 +40,7 @@ unsetopt SHARE_HISTORY
 
 HISTFILE="$ZDOTDIR/.zhistory.local"
 SAVEHIST=1000
+HISTSIZE=1000
 
 select-word-style bash          # bash-style word selection ('/' word boundary)
 
