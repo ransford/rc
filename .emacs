@@ -176,3 +176,6 @@
   (global-hl-line-mode t))
 
 (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
+
+;; make backspace work in iterm (ugh)
+(keyboard-translate ?\C-h ?\C-?)
