@@ -43,41 +43,33 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin on      " enable ftplugins
 
-"""""
-" autocmd stuff, like emacs's hooks
-"""""
-if has("autocmd")
- autocmd BufNewFile,BufRead *.R       setlocal ft=r
- autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
- autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
- autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
- autocmd BufNewFile,BufRead *.json    setlocal ft=javascript
- autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
-                                                   \ spell
+autocmd BufNewFile,BufRead *.R       setlocal ft=r
+autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
+autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
+autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
+autocmd BufNewFile,BufRead *.json    setlocal ft=javascript
+autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
+                                                  \ spell
 
- autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
- autocmd FileType gitcommit DiffGitCached | setlocal ro
- autocmd FileType gitcommit wincmd x " jump to commit msg window
+autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
+autocmd FileType gitcommit DiffGitCached | setlocal ro
+autocmd FileType gitcommit wincmd x " jump to commit msg window
 
- autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
-                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
-                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
- autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
-                                        \ tags=./tags,tags;
- autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
- autocmd FileType mail setlocal ai et nosi tw=76 spell
- autocmd FileType text setlocal ai nosi tw=80 spell
- autocmd FileType *tex setlocal ai et nosi tw=80 spell
- autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
-                                \ | runtime macros/matchit.vim
- autocmd FileType make setlocal noet
-endif
+autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                \ cinkeys=0{,0},0),:,!^F,o,O,e
+autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                \ cinkeys=0{,0},0),:,!^F,o,O,e
+autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                       \ tags=./tags,tags;
+autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
+autocmd FileType mail setlocal ai et nosi tw=76 spell
+autocmd FileType text setlocal ai nosi tw=80 spell
+autocmd FileType *tex setlocal ai et nosi tw=80 spell
+autocmd FileType *tex let _=matchadd('ErrorMsg', '[^\x00-\x7f]', -1)
+autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
+                               \ | runtime macros/matchit.vim
+autocmd FileType make setlocal noet
 
-
-"""""
-" gui stuff, for gvim or vim -g
-"""""
 if has("gui_running")
   set cursorline        " subtly highlight the current line
   set guioptions-=T     " don't need to see toolbar buttons
