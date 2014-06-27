@@ -16,7 +16,7 @@ PS1=$PS1$'\[\e[0;32m\]\A '		# current time (24h)
 PS1=$PS1$'\[\e[1;35m\]\u@\h:\W\$ '	# user@host:~$<space>
 PS1=$PS1$'\[\e[0m\]'			# end colors
 
-function _ssh_auth_save() {
+_ssh_auth_save() {
 	[[ -n "$SSH_AUTH_SOCK" ]] || return 0
 
 	# avoid loops
@@ -37,7 +37,7 @@ function _ssh_auth_save() {
 	return 0
 }
 
-function _screen() {
+_screen() {
 	export HOST=$(hostname -s)
 	_ssh_auth_save
 	\screen $* # call real screen

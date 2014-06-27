@@ -2,7 +2,7 @@
 WHEREAMI=`dirname "$0"`
 RC=`cd "$WHEREAMI" && pwd -P | sed -e "s,^$HOME/,,"`
 
-function dbg() {
+dbg() {
 	echo "$1" 1>&2
 }
 

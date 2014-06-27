@@ -3,13 +3,13 @@
 # zsh: manually executed from .zprofile in login shell
 # should produce NO console output!
 
-function path_prepend() {
+path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="$1${PATH:+":$PATH"}"
 	fi
 }
 
-function path_append() {
+path_append() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="${PATH:+"$PATH:"}$1"
 	fi

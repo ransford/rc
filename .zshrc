@@ -60,7 +60,7 @@ fi
 # functions
 ################################################################################
 
-function _ssh_auth_save() {
+_ssh_auth_save() {
     if [[ -n "$SSH_AUTH_SOCK" ]] ; then
         # avoid loops
         [[ "$SSH_AUTH_SOCK" = "$HOME/.screen/sasock.$HOST" ]] && return 0
@@ -81,12 +81,12 @@ function _ssh_auth_save() {
     return 0
 }
 
-function _screen() {
+_screen() {
     _ssh_auth_save || return 1
     HOST=$HOST \screen $*
 }
 
-function _getgitbranch() {
+_getgitbranch() {
     __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || __GITBRANCH=''
     export __GITBRANCH="${__GITBRANCH##refs/heads/}"
     return 0
@@ -94,14 +94,14 @@ function _getgitbranch() {
 typeset -ga chpwd_functions
 chpwd_functions+=_getgitbranch
 
-function _getgitbranchprompt() {
+_getgitbranchprompt() {
     [[ -n "${__GITBRANCH}" ]] && \
         print -n "%{$fg[blue]%}[${__GITBRANCH}]%{$terminfo[sgr0]%}"
     return 0
 }
 
 # run before each prompt
-function precmd() {
+precmd() {
     case "$history[$[HISTCMD-1]]" in
         git*) _getgitbranch ;;
     esac
@@ -111,7 +111,7 @@ function precmd() {
 }
 
 # run after each command is read but before it's executed
-function preexec() {
+preexec() {
     case $TERM in
         screen*) print -n "\ek${1%%[[:space:]]*}\e\\" ;;
     esac
@@ -120,7 +120,7 @@ function preexec() {
 # emulate chpwd_functions hook for zsh < 4.3.5
 # http://ruderich.org/simon/config/zshrc
 if [[ $ZSH_VERSION < '4.3' ]]; then
-    function chpwd() {
+    chpwd() {
         for function in $chpwd_functions; do
             $function $@
         done
@@ -128,7 +128,7 @@ if [[ $ZSH_VERSION < '4.3' ]]; then
 fi
 
 # prompt stuff -- eww.
-function setprompt () {
+setprompt () {
     case $TERM in
         xterm*)     _PR_TITLEPART=$'%{\e]0;%m:%1~\a%}' ;;
         screen*)    _PR_TITLEPART=$'%{\e_:\005 (\005t)    %m    %~\e\\%}' ;;
@@ -151,7 +151,7 @@ function setprompt () {
 }
 
 # gpg-decrypt a file
-function gpgd () {
+gpgd () {
     FNAME=$1
     if [[ -z "$FNAME" || "$FNAME" = "${FNAME%.gpg}" ]]; then
         echo "Usage: gpgd <filename.gpg>"
