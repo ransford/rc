@@ -5,4 +5,4 @@
 .subversion/servers
 .zcompdump
 .vim/.netrwhist
-.vim/spell/*.spl
+.vim/spell
