@@ -1,6 +1,6 @@
 [ui]
 %include ~/.rc/.hgrc.local
-ignore = ~/.rc/hgignore.global
+ignore = ~/.rc/.hgignore.global
 editor = hgeditor
 
 [extensions]
