@@ -81,7 +81,7 @@ if has("gui_running")
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
   else
-    set guifont=Ubuntu_Mono:h14
+    set guifont=Ubuntu\ Mono:h16
   endif
 endif
 
