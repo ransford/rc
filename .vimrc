@@ -93,6 +93,8 @@ if &t_Co > 2 || has("gui_running")
   if has("gui_running")
     set background=light
   else
+    let g:solarized_termcolors=&t_Co
+    let g:solarized_termtrans=1
     set background=dark
   endif
 
