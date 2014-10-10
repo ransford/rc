@@ -18,6 +18,7 @@
 	targz = archive --format=tar.gz -o HEAD.tar.gz HEAD
 	incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(red)%an %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u}))
 	outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %ar%Creset' $(git rev-parse --abbrev-ref --symbolic-full-name @{u})..)
+	brr = "for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) -- %(color:white)%(authordate:relative)%(color:reset)' --count=35"
 
 [core]
 	autocrlf = input
