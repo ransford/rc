@@ -179,3 +179,6 @@
 
 ;; make backspace work in iterm (ugh)
 (keyboard-translate ?\C-h ?\C-?)
+
+;; color scheme
+(load-theme 'wombat t)
