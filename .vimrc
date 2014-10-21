@@ -134,6 +134,11 @@ endif
 " nice keyboard mappings
 map Q gq
 
+" incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 let mapleader=","
 map <Leader>d :set fileformat=dos<CR>
 map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
