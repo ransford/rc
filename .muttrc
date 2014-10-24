@@ -4,6 +4,7 @@ set tmpdir="~/.tmp"
 # aliases stuff
 set	alias_file="~/.rc/.mutt.aliases"
 source	$alias_file
+set query_command="lbdbq '%s'"
 
 set record
 folder-hook $record 'set index_format=" %Z %[%b %d %H:%M]  %-21.21t (%4c) %s"'

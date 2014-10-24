@@ -12,6 +12,7 @@ for x in \
 	.bash_profile \
 	.emacs \
 	.gitconfig \
+	.lbdbrc \
 	.profile \
 	.screenrc \
 	.subversion \
