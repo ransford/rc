@@ -63,6 +63,9 @@ alias s='sudo'
 alias rmbr='remember'
 alias gdiff='git diff --no-index'
 
+# fat fingers maek for lots of typos
+alias maek='make'
+
 test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
 test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
