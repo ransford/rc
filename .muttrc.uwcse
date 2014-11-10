@@ -1,9 +1,10 @@
 source "~/.rc/.muttrc"
 set tmpdir="~/.tmp"
 
-set	imap_user="ben@g.ransford.org"
-set	imap_pass=`gpg -d ~/Dropbox/Secrets/app-specific.txt.gpg | grep mutt | sed -e 's/.* //'`
-set	smtp_url="smtps://ben@g.ransford.org@smtp.gmail.com"
+set	imap_user="ransford@cs.washington.edu"
+set	imap_pass=`gpg -d ~/Dropbox/Secrets/logins.txt.gpg | grep '^UW CSE gapps' | sed -e 's/.* //'`
+set	smtp_authenticators='gssapi:login'
+set	smtp_url="smtps://ransford@cs.washington.edu@smtp.gmail.com"
 set	smtp_pass=$imap_pass
 set	folder="imaps://imap.gmail.com"
 set	spoolfile = "imaps://imap.gmail.com/INBOX"

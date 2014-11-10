@@ -56,7 +56,8 @@ alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f b
 alias lpreven='lpr -o page-set=even'
 alias lprodd='lpr -o page-set=odd'
 alias nl='nl -ba'
-alias muttg="mutt -F $RC/.muttrc.gmail"
+alias mutt-gro="mutt -F $RC/.muttrc.gro"
+alias mutt-uwcse="mutt -F $RC/.muttrc.uwcse"
 alias httpsrvpwd='python -m SimpleHTTPServer'
 alias gpge='gpg --encrypt'
 alias s='sudo'
