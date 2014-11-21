@@ -50,6 +50,7 @@ fi
 ################################################################################
 # aliases
 ################################################################################
+alias ag="ag --pager='less -R'"
 alias cd..='cd ..'
 alias cpwd='cd "$(pwd -P)"'
 alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
