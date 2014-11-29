@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = git://github.com/rking/ag.vim.git
+[submodule ".vim/bundle/vim-livedown"]
+	path = .vim/bundle/vim-livedown
+	url = https://github.com/shime/vim-livedown.git
