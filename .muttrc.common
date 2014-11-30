@@ -93,6 +93,10 @@ bind pager <tab>	next-unread
 macro pager y		"<change-folder>?<tab>"			"Show incoming mail folders"
 macro pager A		"<save-message>=.Archive<return>"	"Archive message"
 
+# vim-like navigation keys
+macro index gg		<first-entry>
+macro index G		<last-entry>
+
 # view some stuff automatically.
 auto_view text/html
 alternative_order text/plain text/html
