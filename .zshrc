@@ -90,6 +90,7 @@ _screen() {
 }
 
 _getgitbranch() {
+    if [[ $ZSH_VERSION < '4.3' ]]; then return 0; fi
     __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || __GITBRANCH=''
     export __GITBRANCH="${__GITBRANCH##refs/heads/}"
     return 0
@@ -99,7 +100,7 @@ chpwd_functions+=_getgitbranch
 
 _getgitbranchprompt() {
     [[ -n "${__GITBRANCH}" ]] && \
-        print -n "%{$fg[blue]%}[${__GITBRANCH}]%{$terminfo[sgr0]%}"
+        print -n "%{$fg[yellow]%}@${__GITBRANCH}%{$terminfo[sgr0]%}"
     return 0
 }
 
@@ -149,8 +150,7 @@ setprompt () {
         _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%1~%u%<<"
         _PR_INDICATORPART='%B%#%b '
     fi
-    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}${_PR_DIRPART}${_PR_INDICATORPART}'
-    if [[ ! $ZSH_VERSION < '4.3' ]]; then RPROMPT='$(_getgitbranchprompt)'; fi
+    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}${_PR_DIRPART}$(_getgitbranchprompt)${_PR_INDICATORPART}'
 }
 
 # gpg-decrypt a file
