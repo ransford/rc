@@ -100,7 +100,7 @@ chpwd_functions+=_getgitbranch
 
 _getgitbranchprompt() {
     [[ -n "${__GITBRANCH}" ]] && \
-        print -n "%{$fg[yellow]%}:${__GITBRANCH}%{$terminfo[sgr0]%}"
+        print -n "%B%{$fg[yellow]%}:${__GITBRANCH}%b%{$terminfo[sgr0]%}"
     return 0
 }
 
