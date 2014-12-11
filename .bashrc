@@ -9,13 +9,6 @@
 # sourced .profile)
 shopt -q login_shell || source "$HOME/.profile"
 
-# prompt
-PS1=$'\[\e]0;\h:\W\a\]'			# xterm title
-PS1=$PS1$'\[\e[1;31m\]$??'		# exit code $?
-PS1=$PS1$'\[\e[0;32m\]\A '		# current time (24h)
-PS1=$PS1$'\[\e[1;35m\]\u@\h:\W\$ '	# user@host:~$<space>
-PS1=$PS1$'\[\e[0m\]'			# end colors
-
 _ssh_auth_save() {
 	[[ -n "$SSH_AUTH_SOCK" ]] || return 0
 
@@ -44,8 +37,21 @@ _screen() {
 }
 alias screen=_screen
 
+_git_prompt() {
+	local ref="$(command git symbolic-ref HEAD 2>/dev/null)"
+	[ -n "$ref" ] && echo $'\e[1;33m'":${ref#refs/heads/}"
+}
+
+_exit_code() {
+	[ "$PIPESTATUS" -ne 0 ] && echo $'\e[1;31m'"$?!"
+}
+
 # shell options
-test "$BASH_VERSINFO" == 4 && shopt -s globstar # ** is like recursive *
+[ "$BASH_VERSINFO" -eq 4 ] && shopt -s globstar # ** is like recursive *
+
+# prompt
+PS1='\[\e]0;\h:\W\a\]$(_exit_code)\[\e[0;32m\]\A\[\e[0m\] \h:\[\e[4;34m\]\W\[\e[0m\]$(_git_prompt)\[\e[0;36m\]\$\[\e[0m\] '
+#    ^xterm title    ^exit code   ^time                   ^host:~                   ^git          ^$
 
 uptime
 
