@@ -50,7 +50,7 @@ _exit_code() {
 [ "$BASH_VERSINFO" -eq 4 ] && shopt -s globstar # ** is like recursive *
 
 # prompt
-PS1='\[\e]0;\h:\W\a\]$(_exit_code)\[\e[0;32m\]\A\[\e[0m\] \h:\[\e[4;34m\]\W\[\e[0m\]$(_git_prompt)\[\e[0;36m\]\$\[\e[0m\] '
+PS1='\[\e]0;\h:\W\a\]$(_exit_code)\[\e[42;30m\]\A\[\e[0m\] \h:\[\e[4;34m\]\W\[\e[0m\]$(_git_prompt)\[\e[0;36m\]\$\[\e[0m\] '
 #    ^xterm title    ^exit code   ^time                   ^host:~                   ^git          ^$
 
 uptime

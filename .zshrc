@@ -140,7 +140,7 @@ setprompt () {
     esac
     _PR_USERPART="%m:"
     if [[ $COLORTERM -eq 1 ]]; then
-        _PR_TIMEPART="%{$fg[green]%}%T%{$terminfo[sgr0]%} "
+        _PR_TIMEPART="%{$bg[green]$fg[black]%}%T%{$terminfo[sgr0]%} "
         _PR_ECODEPART="%(?..%B%{$fg[red]%}%?!%{$terminfo[sgr0]%}%b)"
         _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%{$fg[blue]%}%1~%{$terminfo[sgr0]%}%u%<<"
         _PR_INDICATORPART="%{$fg[cyan]%}%#%{$terminfo[sgr0]%} "
