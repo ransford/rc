@@ -59,7 +59,9 @@ autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
 autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
-autocmd FileType {c,cpp,java,cs,scala} setlocal ts=4 sw=4 tw=80 ai et cindent si
+autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
+                                       \ tags=./tags,tags;
+autocmd FileType scala setlocal ts=2 sw=2 tw=100 ai et cindent si
                                        \ tags=./tags,tags;
 autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
 autocmd FileType mail setlocal ai et nosi tw=76 spell

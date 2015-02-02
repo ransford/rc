@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/vim-livedown"]
 	path = .vim/bundle/vim-livedown
 	url = https://github.com/shime/vim-livedown.git
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
