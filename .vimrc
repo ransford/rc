@@ -119,7 +119,7 @@ if &t_Co > 2 || has("gui_running")
     autocmd VimEnter * autocmd WinEnter * let w:created=1
     autocmd VimEnter * let w:created=1
     autocmd VimEnter *
-        \ | let w:m1=matchadd('ErrorMsg', printf('\%%>%dv.\+', &tw), -1)
+        \ let w:m1=matchadd('ErrorMsg', printf('\%%>%dv.\+', &tw), -1)
 
     " http://vim.wikia.com/wiki/Highlight_long_lines
     autocmd WinEnter * if !exists('w:created')
