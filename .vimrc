@@ -61,6 +61,8 @@ autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
 autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                        \ tags=./tags,tags;
+autocmd FileType scala setlocal ts=2 sw=2 tw=100 ai et cindent si
+                                       \ tags=./tags,tags;
 autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
 autocmd FileType mail setlocal ai et nosi tw=76 spell
 autocmd FileType text setlocal ai nosi tw=80 spell
@@ -114,14 +116,15 @@ if &t_Co > 2 || has("gui_running")
   if v:version >= 702
     " lines over 80 chars
     " http://vim.wikia.com/wiki/Detect_window_creation_with_WinEnter
-    autocmd VimEnter * let w:m1=matchadd('Error', '\%>80v.\+', -1)
     autocmd VimEnter * autocmd WinEnter * let w:created=1
     autocmd VimEnter * let w:created=1
+    autocmd VimEnter *
+        \ let w:m1=matchadd('ErrorMsg', printf('\%%>%dv.\+', &tw), -1)
 
     " http://vim.wikia.com/wiki/Highlight_long_lines
     autocmd WinEnter * if !exists('w:created')
-                       \ | let w:m1=matchadd('Error', '\%>80v.\+', -1)
-                       \ | endif
+        \ | let w:m1=matchadd('ErrorMsg', printf('\%%>%dv.\+', &tw), -1)
+        \ | endif
     autocmd BufWinLeave * call clearmatches()
   endif
 

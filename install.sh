@@ -14,6 +14,7 @@ for x in \
 	.gitconfig \
 	.i3 \
 	.lbdbrc \
+	.mailcap \
 	.profile \
 	.screenrc \
 	.subversion \
