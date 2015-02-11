@@ -12,6 +12,7 @@ for x in \
 	.bash_profile \
 	.emacs \
 	.gitconfig \
+	.i3 \
 	.lbdbrc \
 	.profile \
 	.screenrc \
