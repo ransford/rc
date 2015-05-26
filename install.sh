@@ -10,6 +10,7 @@ cd "$HOME"
 for x in \
 	.bashrc \
 	.bash_profile \
+	.ctags \
 	.emacs \
 	.gitconfig \
 	.i3 \
