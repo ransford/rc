@@ -5,6 +5,7 @@
 	email = ben@ransford.org
 
 [alias]
+	bra = branch --all -vv
 	co = checkout
 	st = status
 	stt = status --untracked-files=no
