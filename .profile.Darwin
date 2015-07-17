@@ -1,4 +1,5 @@
 alias less='less -R'
 alias locate='mdfind -name'
+alias fin='mdfind -onlyin . -name'
 alias lsa='ls -AFGl'
 alias screensaver='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
