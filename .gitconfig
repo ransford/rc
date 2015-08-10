@@ -2,7 +2,6 @@
 	ui = auto
 [user]
 	name = Ben Ransford
-	email = ben@ransford.org
 
 [alias]
 	bra = branch --all -vv
