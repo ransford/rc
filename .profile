@@ -68,7 +68,7 @@ alias gdiff='git diff --no-index'
 # fat fingers maek for lots of typos
 alias maek='make'
 
-if hash gvim >/dev/null; then
+if hash gvim >/dev/null 2>/dev/null; then
 	alias gvimt='gvim --remote-tab-silent'
 fi
 
