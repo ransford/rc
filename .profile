@@ -32,6 +32,7 @@ export CVS_RSH=ssh
 export LSCOLORS="CxfxcxdxBxegedabagacad"
 export PAGER=less
 export WATCHFMT="%D %T: %B%n%b %a on %l from %M"
+export PYTHONSTARTUP="${RC}/.pythonrc"
 
 for x in vim vi emacs nano; do
     type "$x" >/dev/null 2>&1 && {
