@@ -17,3 +17,6 @@
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule ".rc/.vim/YouCompleteMe"]
+	path = .rc/.vim/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
