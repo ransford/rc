@@ -10,10 +10,6 @@
 [submodule ".vim/bundle/vim-scala"]
 	path = .vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule ".vim/bundle/jedi-vim"]
-	path = .vim/bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
-	fetchRecurseSubmodules = true
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -23,3 +19,6 @@
 [submodule ".vim/bundle/vimoutliner"]
 	path = .vim/bundle/vimoutliner
 	url = git://github.com/vimoutliner/vimoutliner.git
+[submodule ".vim/bundle/python-mode"]
+	path = .vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
