@@ -20,3 +20,6 @@
 [submodule ".rc/.vim/YouCompleteMe"]
 	path = .rc/.vim/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule ".vim/bundle/vimoutliner"]
+	path = .vim/bundle/vimoutliner
+	url = git://github.com/vimoutliner/vimoutliner.git
