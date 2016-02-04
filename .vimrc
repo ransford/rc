@@ -60,6 +60,10 @@ autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
 autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
                                 \ | let g:pymode_lint_on_write=0
+                                \ | let g:pymode_doc=0
+                                \ | let g:pymode_rope=0
+                                \ | let g:pymode_rope_lookup_project=0
+                                \ | let g:pymode_rope_complete_on_dot=0
 autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                        \ tags=./tags,tags;
 autocmd FileType scala setlocal ts=2 sw=2 tw=100 ai et cindent si
