@@ -1,4 +1,5 @@
 source "~/.rc/.muttrc"
+source "~/.rc/.muttrc.gpg"
 set tmpdir="~/.tmp"
 
 set	imap_user="ben@g.ransford.org"
@@ -11,8 +12,13 @@ set	spoolfile = "imaps://imap.gmail.com/INBOX"
 set	postponed="=[Gmail]/Drafts"
 unset	record
 
+set from="ben@ransford.org"
+alternates -group me ben@g\.ransford\.org
+
 set	imap_check_subscribed="yes"
 set	imap_list_subscribed="yes"
 
-macro index gi	"<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gi	"<change-folder>=<enter>" "Go to inbox"
 #bind index \#	"<save-message>=[Gmail]/Trash<enter>"
+
+source "~/.rc/.muttrc.solarized"
