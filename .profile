@@ -60,6 +60,7 @@ alias lprodd='lpr -o page-set=odd'
 alias nl='nl -ba'
 alias mutt-gro="mutt -F $RC/.muttrc.gro"
 alias mutt-uwcse="mutt -F $RC/.muttrc.uwcse"
+alias mutt-virta="mutt -F $RC/.muttrc.virta"
 alias httpsrvpwd='python -m SimpleHTTPServer'
 alias gpge='gpg --encrypt'
 alias s='sudo'
