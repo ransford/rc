@@ -18,6 +18,7 @@ for x in \
 	.mailcap \
 	.profile \
 	.screenrc \
+	.sqliterc \
 	.subversion \
 	.tmux.conf \
 	.vim \
