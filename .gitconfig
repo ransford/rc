@@ -5,6 +5,7 @@
 
 [alias]
 	bra = branch --all -vv
+	brar = branch --all -vv --sort=-committerdate
 	co = checkout
 	st = status
 	stt = status --untracked-files=no
