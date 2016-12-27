@@ -45,7 +45,8 @@ type svneditor >/dev/null 2>&1 && export SVN_EDITOR=svneditor
 
 # color grep if available
 if echo x | grep --color=auto x >/dev/null 2>/dev/null; then
-    export GREP_OPTIONS="--color=auto" GREP_COLOR="0;35" # yellow
+    alias grep='grep --color=auto'
+    export GREP_COLOR="0;35" # yellow
 fi
 
 ################################################################################
