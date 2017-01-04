@@ -57,7 +57,7 @@ autocmd FileType gitcommit wincmd x " jump to commit msg window
 
 autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
-autocmd FileType python setlocal ts=4 sw=4 tw=80 ai et cindent si
+autocmd FileType python setlocal ts=4 sw=4 tw=79 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
                                 \ | let g:pymode_lint_on_write=0
                                 \ | let g:pymode_doc=0
