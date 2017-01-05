@@ -58,6 +58,7 @@ alias cpwd='cd "$(pwd -P)"'
 alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
 alias lpreven='lpr -o page-set=even'
 alias lprodd='lpr -o page-set=odd'
+alias pcat='pygmentize -g'
 alias nl='nl -ba'
 alias mutt-gro="mutt -F $RC/.muttrc.gro"
 alias mutt-uwcse="mutt -F $RC/.muttrc.uwcse"
