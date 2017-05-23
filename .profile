@@ -68,7 +68,7 @@ alias gpge='gpg --encrypt'
 alias s='sudo'
 alias rmbr='remember'
 alias gdiff='git diff --no-index'
-alias ve='source venv/bin/activate'
+alias ve='source .venv/bin/activate'
 
 # fat fingers maek for lots of typos
 alias maek='make'
