@@ -13,6 +13,7 @@
 	di = diff
 	wdiff = diff --color-words
 	wshow = show --color-words
+	taggies = tag --list --format='%(if)%(contents:signature)%(then)🔏 %(else)  %(end) %(color:white)%(refname:short) %(color:blue)%(align:width=35)%(taggerdate)%(end)%(color:reset) %(contents:subject)'
 	pul = pull
 	poosh = push
 	graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold blue)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
