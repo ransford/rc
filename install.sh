@@ -12,6 +12,7 @@ for x in \
 	.bash_profile \
 	.ctags \
 	.emacs \
+	.emacs.d \
 	.gitconfig \
 	.i3 \
 	.lbdbrc \
