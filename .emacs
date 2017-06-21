@@ -1,3 +1,7 @@
+;; .emacs
+
+(add-to-list 'load-path "~/.emacs.d/elisp/")
+
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
 
@@ -12,6 +16,8 @@
 
 ;; Stop at the end of the file, don't just add lines forever
 (setq next-line-add-newlines nil)
+
+(require 'fill-column-indicator)
 
 ;; set various filename -> mode mappings
 (setq auto-mode-alist
@@ -37,7 +43,17 @@
 (add-hook 'python-mode-hook
 	  (lambda ()
 	    (progn
+	      (setq comment-style 'indent)
+	      (whitespace-mode t)
+	      (setq fill-column 72)
+	      (fci-mode t)
+	      (setq fci-rule-column 79)
 	      (setq py-smart-indentation nil)
+	      (setq indent-tabs-mode nil))))
+
+(add-hook 'javascript-mode-hook
+	  (lambda ()
+	    (progn
 	      (setq indent-tabs-mode nil))))
 
 ;; emacs21-specific prettiness stuff
