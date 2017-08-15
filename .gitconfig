@@ -13,6 +13,7 @@
 	di = diff
 	wdiff = diff --color-words
 	wshow = show --color-words
+	whatdi = diff --name-status
 	taggies = tag --list --sort=taggerdate --format='%(if)%(contents:signature)%(then)🔏 %(else)  %(end) %(color:white)%(refname:short) %(color:blue)%(align:width=35)%(taggerdate)%(end)%(color:reset) %(contents:subject)'
 	pul = pull
 	poosh = push
