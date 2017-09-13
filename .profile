@@ -3,6 +3,12 @@
 # zsh: manually executed from .zprofile in login shell
 # should produce NO console output!
 
+# unset these later
+RC="$HOME/.rc"
+OS="$(uname -s)"
+MACHINE="$(uname -m)"
+_TIPFILE="$RC/tips.txt"
+
 path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="$1${PATH:+":$PATH"}"
@@ -15,10 +21,13 @@ path_append() {
 	fi
 }
 
-# unset these later
-RC="$HOME/.rc"
-OS="$(uname -s)"
-MACHINE="$(uname -m)"
+tip() {
+	if [ -n "$1" ] && [ -r "$_TIPFILE" ]; then
+		grep "$1" "$_TIPFILE"
+	else
+		return 1
+	fi
+}
 
 path_prepend "$HOME/bin"
 path_prepend "$HOME/bin/noarch"
