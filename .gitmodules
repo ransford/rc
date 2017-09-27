@@ -16,9 +16,6 @@
 [submodule ".vim/bundle/vimoutliner"]
 	path = .vim/bundle/vimoutliner
 	url = git://github.com/vimoutliner/vimoutliner.git
-[submodule ".vim/bundle/python-mode"]
-	path = .vim/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -31,3 +28,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
