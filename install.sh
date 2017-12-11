@@ -13,6 +13,7 @@ for x in \
 	.ctags \
 	.emacs \
 	.emacs.d \
+	.ghci \
 	.gitconfig \
 	.i3 \
 	.lbdbrc \
