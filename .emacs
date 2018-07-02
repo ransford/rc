@@ -56,12 +56,14 @@
 	    (progn
 	      (setq indent-tabs-mode nil))))
 
-;; emacs21-specific prettiness stuff
-(when (eq emacs-major-version 21)
-  (blink-cursor-mode nil)
-  (setq font-lock-maximum-decoration t)
-  (global-font-lock-mode t)
-  (tool-bar-mode nil))
+;; emacs >= 21 prettiness
+(blink-cursor-mode nil)
+(setq font-lock-maximum-decoration t)
+(global-font-lock-mode t)
+;; (tool-bar-mode nil)
+
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; M-g-l: _G_o to _L_ine
 (global-unset-key "\M-g\M-l")
