@@ -89,7 +89,7 @@ if has("gui_running")
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
   elseif has("macunix")
-    set guifont=Ubuntu\ Mono:h14
+    set guifont=Hack\ Regular:h14
   else
     set guifont=Ubuntu\ Mono\ 12
   endif
