@@ -111,8 +111,6 @@ if &t_Co > 2 || has("gui_running")
   hi default link CursorColumn LineNr
   hi default link CursorLine LineNr
   hi default link SpellBad WarningMsg
-  hi default link NonText Comment
-  hi default link SpecialKey Comment
 
   " trailing whitespace
   " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
