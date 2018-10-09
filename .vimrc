@@ -54,6 +54,7 @@ autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
 autocmd FileType gitcommit DiffGitCached | setlocal ro
 autocmd FileType gitcommit wincmd x " jump to commit msg window
 
+autocmd FileType go setlocal ts=4 sw=4 tw=80 cindent ai si noet nolist
 autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
 autocmd FileType python setlocal ts=4 sw=4 tw=79 ai et cindent si
