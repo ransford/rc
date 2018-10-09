@@ -47,7 +47,6 @@ autocmd BufNewFile,BufRead *.R       setlocal ft=r
 autocmd BufNewFile,BufRead mutt-*    setlocal ft=mail
 autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
 autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
-autocmd BufNewFile,BufRead *.json    setlocal ft=javascript
 autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                   \ spell
 
@@ -151,6 +150,7 @@ map <Leader>u :set fileformat=unix<CR>
 map <Leader>f :execute "Ag! " . expand("<cword>")<CR>
 map <Leader>c :let &colorcolumn=col(".")<CR>
 autocmd FileType python map <Leader>y :PymodeLint<CR>
+autocmd FileType json map <Leader>j :!jq .<CR>
 
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
