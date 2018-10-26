@@ -49,6 +49,7 @@ autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
 autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
 autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                   \ spell
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
 autocmd FileType gitcommit DiffGitCached | setlocal ro
