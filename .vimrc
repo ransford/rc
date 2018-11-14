@@ -39,6 +39,11 @@ set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
 
 helptags ~/.rc/.vim/doc
 
+let g:pathogen_disabled = []
+if v:version < 742
+  call add(g:pathogen_disabled, 'vim-go')
+endif
+
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin on      " enable ftplugins
