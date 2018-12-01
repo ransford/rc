@@ -107,7 +107,7 @@ if has("gui_running")
   elseif has("macunix")
     set guifont=Hack\ Regular:h14
   else
-    set guifont=Ubuntu\ Mono\ 12
+    set guifont=Hack\ 13
   endif
 endif
 
