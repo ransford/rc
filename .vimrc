@@ -114,13 +114,16 @@ endif
 " switch syntax highlighting on when the terminal has colors
 if &t_Co > 2 || has("gui_running")
   syntax on
-  colorscheme solarized " pretty color scheme
-  let g:solarized_menu = 0
-  if has("gui_running")
-    set background=light
+
+  " set color scheme based on time of day
+  if strftime("%H") < 21
+    colorscheme solarized
+    let g:solarized_menu = 0
+    if has("gui_running")
+      set background=light
+    endif
   else
-    let g:solarized_termcolors=&t_Co
-    let g:solarized_termtrans=1
+    colorscheme evening
     set background=dark
   endif
 
