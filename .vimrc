@@ -115,16 +115,17 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
 
+  colorscheme solarized
+  let g:solarized_menu = 0
+
   " set color scheme based on time of day
-  if strftime("%H") < 21
-    colorscheme solarized
-    let g:solarized_menu = 0
-    if has("gui_running")
+  if has("gui_running")
+    if strftime("%H") < 21
       set background=light
+    else
+      colorscheme evening
+      set background=dark
     endif
-  else
-    colorscheme evening
-    set background=dark
   endif
 
   hi default link CursorColumn LineNr
