@@ -2,6 +2,9 @@
 	ui = auto
 [user]
 	name = Ben Ransford
+	signingkey = 8AC44C359B831EC3
+[gpg]
+	program = gpg
 
 [alias]
 	lg = log --pretty=format:'%C(yellow)%h %C(magenta)%an%C(cyan)%d%C(white) %s %Creset- %ar'
