@@ -120,7 +120,7 @@ if &t_Co > 2 || has("gui_running")
 
   " set color scheme based on time of day
   if has("gui_running")
-    if strftime("%H") < 21
+    if strftime("%H") < 21 && strftime("%H") > 7
       set background=light
     else
       colorscheme evening
