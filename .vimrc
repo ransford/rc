@@ -170,6 +170,7 @@ map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
 map <Leader>u :set fileformat=unix<CR>
 map <Leader>f :execute "Ag! " . expand("<cword>")<CR>
 map <Leader>c :let &colorcolumn=col(".")<CR>
+map <Leader>s "=strftime("%c %Z")<CR>p
 autocmd FileType python map <Leader>y :PymodeLint<CR>
 autocmd FileType json map <Leader>j :!jq .<CR>
 
