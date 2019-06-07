@@ -174,6 +174,11 @@ map <Leader>t "=strftime("%c %Z")<CR>p
 autocmd FileType python map <Leader>y :PymodeLint<CR>
 autocmd FileType json map <Leader>j :!jq .<CR>
 
+" globally replace word under cursor with <Leader>r<Leader>R
+nnoremap <Leader>r ciw
+" replace the most recently inserted ("rename")
+nnoremap <Leader>R :%s/<c-r>-/<c-r>./gc<CR>
+
 " alias :W to :w for slow shift fingers
 cnoreabbrev W w
 
