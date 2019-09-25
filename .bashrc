@@ -42,16 +42,18 @@ _git_prompt() {
 	[ -n "$ref" ] && echo $'\e[1;33m'":${ref#refs/heads/}"
 }
 
-_exit_code() {
-	[ "$PIPESTATUS" -ne 0 ] && echo $'\e[1;31m'"$?!"
-}
-
 # shell options
 [ "$BASH_VERSINFO" -eq 4 ] && shopt -s globstar # ** is like recursive *
 
 # prompt
-PS1='\[\e]0;\h:\W\a\]$(_exit_code)\[\e[42;30m\]\A\[\e[0m\] \h:\[\e[4;34m\]\W\[\e[0m\]$(_git_prompt)\[\e[0;36m\]\$\[\e[0m\] '
-#    ^xterm title    ^exit code   ^time                   ^host:~                   ^git          ^$
+PS1=$'\[\E[01;31m\]'\
+$'${PIPESTATUS#0}'\
+$'\[\E[00m\]'\
+$'<'\
+$'\[\E[2;m\]\A\[\E[0;m\]'\
+$'>\h'\
+$'[\[\E[4;33m\]\w\[\E[0;m\]]'\
+$'\[\E[1;37m\]\$\[\E[0;m\] '
 
 uptime
 
