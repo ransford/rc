@@ -8,24 +8,11 @@ dbg() {
 
 cd "$HOME"
 for x in \
-	.bashrc \
-	.bash_profile \
-	.ctags \
-	.emacs \
-	.emacs.d \
-	.ghci \
 	.gitconfig \
-	.i3 \
-	.lbdbrc \
-	.mailcap \
 	.profile \
-	.screenrc \
-	.sqliterc \
-	.subversion \
 	.tmux.conf \
 	.vim \
 	.vimrc \
-	.Xresources \
 	.zshenv \
 	; do
 	if [ -L "$x" ]; then
