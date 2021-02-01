@@ -42,7 +42,6 @@ export LSCOLORS="CxfxcxdxBxegedabagacad"
 export PAGER=less
 export WATCHFMT="%D %T: %B%n%b %a on %l from %M"
 export PYTHONSTARTUP="${RC}/.pythonrc"
-export GOPATH="${HOME}/.go"
 
 for x in vim vi emacs nano; do
     type "$x" >/dev/null 2>&1 && {
