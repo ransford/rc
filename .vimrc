@@ -119,13 +119,10 @@ if &t_Co > 2 || has("gui_running")
   let g:solarized_menu = 0
 
   " set color scheme based on time of day
-  if has("gui_running")
-    if strftime("%H") < 21 && strftime("%H") > 7
-      set background=light
-    else
-      colorscheme evening
-      set background=dark
-    endif
+  if strftime("%H") < 21 && strftime("%H") > 7
+    set background=light
+  else
+    set background=dark
   endif
 
   hi default link CursorColumn LineNr
