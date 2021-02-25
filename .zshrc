@@ -22,6 +22,8 @@ autoload -U colors
 autoload -U select-word-style
 autoload -U zmv
 autoload -U zsh/terminfo
+autoload -Uz edit-command-line
+zle -N edit-command-line
 
 ################################################################################
 # set various options
@@ -52,6 +54,7 @@ bindkey -e                      # emacs keybindings
 bindkey "[3~" backward-kill-word        # alt-backspace
 bindkey "^[[5~" history-search-backward # page up
 bindkey "^[[6~" history-search-forward  # page down
+bindkey "^x^e" edit-command-line        # full-screen command editing
 
 # are we on a color terminal?
 if [[ "$terminfo[colors]" -ge 8 ]]; then
