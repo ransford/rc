@@ -170,6 +170,13 @@ gpgd () {
     gpg --decrypt --output "${FNAME%.gpg}" "${FNAME}"
 }
 
+# git commit browser adapted from https://github.com/junegunn/fzf/wiki/examples
+gitbrowse() {
+  logfmt='%h %C(magenta)%an%C(cyan)%d%C(white) %s %Creset- %ar'
+  git log --color=always --pretty="format:$logfmt" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind "enter:execute(git show -m {1})"
+}
+
 ################################################################################
 # completion
 ################################################################################
