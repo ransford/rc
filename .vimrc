@@ -54,7 +54,7 @@ autocmd BufNewFile,BufRead *.ll      setlocal ft=llvm
 autocmd BufNewFile,BufRead *.td      setlocal ft=tablegen
 autocmd BufNewFile,BufRead svn-commit*.tmp setlocal ts=4 sw=4 tw=72 ai et
                                                   \ spell
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 autocmd FileType gitcommit setlocal tw=80 ai et spell | syntax on
 autocmd FileType gitcommit DiffGitCached | setlocal ro
@@ -70,6 +70,9 @@ autocmd FileType go setlocal ts=4 sw=4 tw=80 cindent ai si noet nolist
                             \ | let g:go_highlight_structs = 1
                             \ | let g:go_highlight_types = 1
                             \ | let g:go_auto_sameids = 1
+                            \ | let g:go_auto_type_info = 1
+                            \ | let g:go_fmt_autosave = 1
+                            \ | let g:go_fmt_commands = "goimports"
                             \ | let g:go_auto_type_info = 1
 autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
