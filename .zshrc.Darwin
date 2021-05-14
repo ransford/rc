@@ -1,2 +1,9 @@
 # case-insensitive matching
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+BREW="$(brew --prefix)" && {
+    FZF="$(brew --prefix fzf)" && {
+        test -f "${FZF}/shell/completion.zsh" && source "${FZF}/shell/completion.zsh"
+        test -f "${FZF}/shell/key-bindings.zsh" && source "${FZF}/shell/key-bindings.zsh"
+    }
+}
