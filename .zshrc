@@ -171,8 +171,8 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-staged-changes true # enable %c
 zstyle ':vcs_info:*' stagedstr ' +'
 # zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' formats '%F{170}(%b%c)%m'
-zstyle ':vcs_info:*' actionformats '%F{162}(%b|%a%c)%m'
+zstyle ':vcs_info:*' formats '%F{170}(%b%c)%m%f'
+zstyle ':vcs_info:*' actionformats '%F{162}(%b|%a%c)%m%f'
 
 setprompt
 
