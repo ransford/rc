@@ -74,6 +74,8 @@ autocmd FileType go setlocal ts=4 sw=4 tw=80 cindent ai si noet nolist
                             \ | let g:go_fmt_autosave = 1
                             \ | let g:go_fmt_commands = "goimports"
                             \ | let g:go_auto_type_info = 1
+autocmd FileType go inoremap <buffer> . .<C-x><C-o>
+
 autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
 autocmd FileType python setlocal ts=4 sw=4 tw=79 ai et cindent si
