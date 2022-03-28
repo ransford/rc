@@ -163,13 +163,9 @@ gitbrowse() {
   fzf --ansi --no-sort --reverse --tiebreak=index --bind "enter:execute(git show -m {1})"
 }
 
-################################################################################
-# completion
-################################################################################
-# The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+autoload -U compinit && compinit
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-staged-changes true # enable %c
@@ -177,9 +173,6 @@ zstyle ':vcs_info:*' stagedstr ' +'
 # zstyle ':vcs_info:*' unstagedstr ' *'
 zstyle ':vcs_info:*' formats '%F{170}(%b%c)%m'
 zstyle ':vcs_info:*' actionformats '%F{162}(%b|%a%c)%m'
-
-autoload -U compinit && compinit
-# End of lines added by compinstall
 
 setprompt
 
