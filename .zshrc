@@ -22,6 +22,7 @@ autoload -U colors
 autoload -U select-word-style
 autoload -U zmv
 autoload -U zsh/terminfo
+autoload -Uz vcs_info
 autoload -Uz edit-command-line
 zle -N edit-command-line
 
@@ -92,26 +93,9 @@ _screen() {
     HOST=$HOST \screen $*
 }
 
-_getgitbranch() {
-    if [[ $ZSH_VERSION < '4.3' ]]; then return 0; fi
-    __GITBRANCH=$(git symbolic-ref HEAD 2>/dev/null) || __GITBRANCH=''
-    export __GITBRANCH="${__GITBRANCH##refs/heads/}"
-    return 0
-}
-typeset -ga chpwd_functions
-chpwd_functions+=_getgitbranch
-
-_getgitbranchprompt() {
-    [[ -n "${__GITBRANCH}" ]] && \
-        print -n "%B%{$fg[yellow]%}:${__GITBRANCH}%b%{$terminfo[sgr0]%}"
-    return 0
-}
-
 # run before each prompt
 precmd() {
-    case "$history[$[HISTCMD-1]]" in
-        git*) _getgitbranch ;;
-    esac
+    vcs_info
     case $TERM in
         screen*) print -n "\ek${ZSH_NAME}\e\\"
     esac
@@ -141,19 +125,21 @@ setprompt () {
         screen*)    _PR_TITLEPART=$'%{\e_:\005 (\005t)    %m    %~\e\\%}' ;;
         *)          _PR_TITLEPART='' ;;
     esac
-    _PR_USERPART="%m:"
+    _PR_HOSTPART="%m:"
     if [[ $COLORTERM -eq 1 ]]; then
-        _PR_TIMEPART="%{$bg[green]$fg[black]%}%T%{$terminfo[sgr0]%} "
-        _PR_ECODEPART="%(?..%B%{$fg[red]%}%?!%{$terminfo[sgr0]%}%b)"
-        _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%{$fg[blue]%}%1~%{$terminfo[sgr0]%}%u%<<"
-        _PR_INDICATORPART="%{$fg[cyan]%}%#%{$terminfo[sgr0]%} "
+        # https://www.ditig.com/256-colors-cheat-sheet
+        _PR_TIMEPART='%F{242}%T%f '
+        _PR_ECODEPART="%(?..%B%F{red}%?!%f%b)"
+        _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%F{blue}%1~%f%u%<<"
+        _PR_INDICATORPART="%F{cyan}%#%f "
     else
         _PR_TIMEPART='%B%T%b '
         _PR_ECODEPART='%(?..%B%?%b!)'
         _PR_DIRPART="%$(expr $COLUMNS / 2 - 6)<...<%U%1~%u%<<"
         _PR_INDICATORPART='%B%#%b '
     fi
-    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_USERPART}${_PR_DIRPART}$(_getgitbranchprompt)${_PR_INDICATORPART}'
+    PROMPT='${_PR_TITLEPART}${_PR_TIMEPART}${_PR_ECODEPART}${_PR_HOSTPART}${_PR_DIRPART}${_PR_INDICATORPART}'
+    RPROMPT='${vcs_info_msg_0_}'
 }
 
 # gpg-decrypt a file
@@ -184,6 +170,13 @@ gitbrowse() {
 
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-staged-changes true # enable %c
+zstyle ':vcs_info:*' stagedstr ' +'
+# zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' formats '%F{170}(%b%c)%m'
+zstyle ':vcs_info:*' actionformats '%F{162}(%b|%a%c)%m'
 
 autoload -U compinit && compinit
 # End of lines added by compinstall
