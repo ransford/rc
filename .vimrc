@@ -9,6 +9,7 @@ set nocompatible
 set ai                  " always set autoindenting on
 set backupdir=~/.tmp    " where to keep backups
 set bs=2                " allow backspacing over everything in insert mode
+set clipboard=unnamed   " use system clipboard
 set dir=~/.tmp          " where to keep swap files
 set display=uhex        " display unprintable characters as <xx> (hex)
 set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
@@ -109,7 +110,7 @@ if has("gui_running")
 
     " make shift-insert paste (well, as long as MiddleMouse pastes)
     map! <S-Insert> <MiddleMouse>
-  elseif has("macunix")
+  elseif has("mac")
     set guifont=Hack\ Regular:h14
   else
     set guifont=Hack\ 13
