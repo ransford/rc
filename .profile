@@ -64,6 +64,12 @@ alias ve='source .venv/bin/activate'
 # fat fingers maek for lots of typos
 alias maek='make'
 
+################################################################################
+# application specific
+################################################################################
+export FZF_DEFAULT_COMMAND=fd
+
+# allow OS-, machine-, and local-specific overriding
 test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
 test -r "$RC/.profile.$OS.$ARCH" && source "$RC/.profile.$OS.$ARCH"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
