@@ -61,23 +61,11 @@ fi
 ################################################################################
 # aliases
 ################################################################################
-alias ag="ag --pager='less -R'"
 alias cd..='cd ..'
 alias cpwd='cd "$(pwd -P)"'
-alias elcc="emacs -batch -eval '(setq load-path (cons \".\" load-path))' -q -f batch-byte-compile"
-alias lpreven='lpr -o page-set=even'
-alias lprodd='lpr -o page-set=odd'
-alias pcat='pygmentize -g'
 alias nl='nl -ba'
-alias mutt-gro="mutt -F $RC/.muttrc.gro"
-alias mutt-uwcse="mutt -F $RC/.muttrc.uwcse"
-alias mutt-virta="mutt -F $RC/.muttrc.virta"
-alias httpsrvpwd2='python2 -m SimpleHTTPServer'
 alias httpsrvpwd='python3 -m http.server'
-alias gpge='gpg --encrypt'
 alias s='sudo'
-alias sshsox='ssh -aknxyNT -D 9000'
-alias rmbr='remember'
 alias gdiff='git diff --no-index'
 alias ve='source .venv/bin/activate'
 
