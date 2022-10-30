@@ -6,7 +6,7 @@
 # unset these later
 RC="$HOME/.rc"
 OS="$(uname -s)"
-MACHINE="$(uname -m)"
+ARCH="$(uname -m)"
 
 path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -65,10 +65,5 @@ alias ve='source .venv/bin/activate'
 alias maek='make'
 
 test -r "$RC/.profile.$OS" && source "$RC/.profile.$OS"
-test -r "$RC/.profile.$OS.$MACHINE" && source "$RC/.profile.$OS.$MACHINE"
+test -r "$RC/.profile.$OS.$ARCH" && source "$RC/.profile.$OS.$ARCH"
 test -r "$RC/.profile.local" && source "$RC/.profile.local"
-
-# clean up local vars
-unset MACHINE
-unset OS
-unset RC
