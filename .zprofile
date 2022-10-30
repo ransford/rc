@@ -1,1 +1,1 @@
-source "$HOME/.profile"
+source "${ZDOTDIR}/.profile"
