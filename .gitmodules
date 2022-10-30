@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/vimoutliner"]
-	path = .vim/bundle/vimoutliner
-	url = git://github.com/vimoutliner/vimoutliner.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
