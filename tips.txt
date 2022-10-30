@@ -1,1 +1,0 @@
-identify screen.mov; ffmpeg -i screen.mov -s 776x104 -pix_fmt rgb8 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif  # make a movie
