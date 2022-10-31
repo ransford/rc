@@ -26,3 +26,7 @@
 	path = .vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 	branch = master
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+	branch = master

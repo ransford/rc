@@ -121,6 +121,9 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
 
+  colorscheme solarized
+  let g:solarized_menu = 0
+
   " set color scheme based on time of day
   if strftime("%H") < 21 && strftime("%H") > 7
     set background=light
