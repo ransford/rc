@@ -1,13 +1,11 @@
-#!/bin/bash
-WHEREAMI=`dirname "$0"`
-RC=`cd "$WHEREAMI" && pwd -P | sed -e "s,^$HOME/,,"`
+#!/bin/bash -eu
 
-dbg() {
-	echo "$1" 1>&2
-}
+WHEREAMI=$(dirname "$0")
+RC=$(cd "$WHEREAMI" && pwd -P | sed -e "s,^${HOME}/,,")
 
 cd "$HOME"
 for x in \
+	.config \
 	.gitconfig \
 	.profile \
 	.tmux.conf \
@@ -16,15 +14,15 @@ for x in \
 	.zshenv \
 	; do
 	if [ -L "$x" ]; then
-		LTARGET=`readlink "$x"`
-		INODE1=`ls -id "$LTARGET" | cut -d' ' -f1`
-		INODE2=`ls -id "$RC/$x" | cut -d' ' -f1`
+		LTARGET=$(readlink "$x")
+		INODE1=$(ls -id "$LTARGET" | cut -d' ' -f1)
+		INODE2=$(ls -id "$RC/$x" | cut -d' ' -f1)
 		if [ "$INODE1" = "$INODE2" ]; then
-			dbg "$x: Already symlinked; doing nothing"
+			echo "$x: Already symlinked; doing nothing" >&2
 		fi
 		continue
 	elif [ -e "$x" ]; then
-		dbg "$x: File or directory exists; doing nothing"
+		echo "$x: File or directory exists; doing nothing" >&2
 		continue
 	fi
 
