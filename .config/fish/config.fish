@@ -3,4 +3,7 @@ if status is-interactive
     uptime
 end
 
-# TODO local overrides
+# local overrides
+if test -f $__fish_config_dir/local.fish
+	source $__fish_config_dir/local.fish
+end
