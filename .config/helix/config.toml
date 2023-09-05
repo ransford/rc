@@ -3,6 +3,7 @@ theme = "molokai"
 [editor]
 cursorline = true
 true-color = true
+auto-info  = true # show info popups while entering commands
 
 [editor.cursor-shape]
 insert = "bar"
