@@ -21,7 +21,7 @@ set -g ARCH (uname -m)
 set -gx PAGER less
 
 for editor in hx vim vi
-	if hash $editor 2>/dev/null
+	if which $editor &>/dev/null
 		set -gx EDITOR $editor
 		break
 	end
