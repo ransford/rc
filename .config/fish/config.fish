@@ -1,3 +1,5 @@
+set fish_greeting # suppress welcome message
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     uptime
