@@ -6,5 +6,6 @@ if status is-interactive
 
 	abbr --add locate 'mdfind -name'
 	abbr --add fin 'mdfind -onlyin . -name'
+	abbr --add hhost 'dscacheutil -q host -a name'
 end
 
