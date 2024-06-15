@@ -30,3 +30,6 @@
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 	branch = master
+[submodule ".config/alacritty/themes"]
+	path = .config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme.git
