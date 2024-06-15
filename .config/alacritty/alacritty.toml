@@ -1,0 +1,17 @@
+import = [
+    "~/.config/alacritty/themes/themes/solarized_dark.toml"
+]
+
+[window]
+option_as_alt = "OnlyLeft"
+dimensions = { columns = 110, lines = 40 }
+
+[scrolling]
+history = 20000
+
+[selection]
+save_to_clipboard = true
+
+[font]
+normal = { family = "Iosevka Term", style = "Regular" }
+size = 16
