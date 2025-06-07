@@ -121,10 +121,6 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
 
-  colorscheme solarized
-  let g:solarized_menu = 0
-  set background=dark
-
   hi default link CursorColumn LineNr
   hi default link CursorLine LineNr
   hi default link SpellBad WarningMsg
