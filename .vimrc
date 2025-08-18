@@ -10,6 +10,7 @@ set ai                  " always set autoindenting on
 set backupdir=~/.tmp    " where to keep backups
 set bs=2                " allow backspacing over everything in insert mode
 set clipboard=unnamed   " use system clipboard
+set cursorline          " subtly highlight the current line
 set dir=~/.tmp          " where to keep swap files
 set display=uhex        " display unprintable characters as <xx> (hex)
 set formatoptions=tcq2  " see help -- basically, auto-wrap nicely @ textwidth
@@ -101,7 +102,6 @@ autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
 autocmd FileType make setlocal noet
 
 if has("gui_running")
-  set cursorline        " subtly highlight the current line
   set guioptions-=T     " don't need to see toolbar buttons
   set lines=40 columns=90
 
@@ -148,10 +148,6 @@ if &t_Co > 2 || has("gui_running")
     autocmd BufWinLeave * call clearmatches()
   endif
 
-endif
-
-if has("gui_macvim")
-  set transparency=4
 endif
 
 " nice keyboard mappings

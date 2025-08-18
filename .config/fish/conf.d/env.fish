@@ -2,7 +2,7 @@ set -g OS (uname)
 set -g ARCH (uname -m)
 set -gx PAGER less
 
-for editor in hx vim vi
+for editor in nvim vim vi
 	if which $editor &>/dev/null
 		set -gx EDITOR $editor
 		break
