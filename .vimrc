@@ -132,14 +132,16 @@ endif
 map Q gq
 
 let mapleader=","
-map <Leader>d :set fileformat=dos<CR>
 map <Leader>p a<C-R>=system("pwgen -s -c -n -y 16 1 \| tr -d '\\n'")<CR><Esc>
 map <Leader>u :set fileformat=unix<CR>
-map <Leader>f :execute "Ag! " . expand("<cword>")<CR>
 map <Leader>c :let &colorcolumn=col(".")<CR>
 map <Leader>t "=strftime("%c %Z")<CR>p
-autocmd FileType python map <Leader>y :PymodeLint<CR>
-autocmd FileType json map <Leader>j :!jq .<CR>
+
+" telescope
+nnoremap <Leader>ff <cmd>Telescope find_files<cr>
+nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <Leader>fb <cmd>Telescope buffers<cr>
+nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
 
 " globally replace word under cursor with <Leader>r<Leader>R
 nnoremap <Leader>r ciw
