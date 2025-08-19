@@ -31,7 +31,7 @@ set showmatch           " at ),],}, briefly jump the cursor to opening bracket
 set showmode            " show a message when in insert/replace/visual mode
 set nosmartindent       " smart indentation (sucks)
 set smarttab            " smart tab interpretation
-set spellfile=~/.vim/spell/en.utf-8.add " my own words
+" set spellfile=~/.vim/spell/en.utf-8.add " my own words
 set spelllang=en_us     " we're #1
 set statusline=%m\ %#StatusLineNC#%F%#StatusLine#\ %y%(\ [#%n%R]%)
 set statusline+=%=%#StatusLineNC#\ L%l/%L,c%c\ %#StatusLine#\  " pretty status line
@@ -39,15 +39,6 @@ set viminfo='20,\"50    " read/write .viminfo, <=50 lines of registers
 set viminfo+=h          " at startup, don't highlight old search
 set wildmenu wildmode=longest,list,full  " bash-like autocompletion behavior
 
-helptags ~/.rc/.vim/doc
-
-let g:pathogen_disabled = []
-if v:version < 742
-  call add(g:pathogen_disabled, 'vim-go')
-endif
-
-call pathogen#infect()
-call pathogen#helptags()
 filetype plugin on      " enable ftplugins
 
 autocmd BufNewFile,BufRead *.R       setlocal ft=r
@@ -78,8 +69,6 @@ autocmd FileType go setlocal ts=4 sw=4 tw=80 cindent ai si noet nolist
                             \ | let g:go_auto_type_info = 1
 autocmd FileType go inoremap <buffer> . .<C-x><C-o>
 
-autocmd FileType perl  setlocal ts=4 sw=4 tw=80 ai et cindent si
-                                \ cinkeys=0{,0},0),:,!^F,o,O,e
 autocmd FileType python setlocal ts=4 sw=4 tw=79 ai et cindent si
                                 \ cinkeys=0{,0},0),:,!^F,o,O,e
                                 \ | let g:pymode_lint_on_write=0
@@ -89,31 +78,20 @@ autocmd FileType python setlocal ts=4 sw=4 tw=79 ai et cindent si
                                 \ | let g:pymode_rope_complete_on_dot=0
 autocmd FileType {c,cpp,java,cs} setlocal ts=4 sw=4 tw=80 ai et cindent si
                                        \ tags=./tags,tags;
-autocmd FileType scala setlocal ts=2 sw=2 tw=100 ai et cindent si
-                                       \ tags=./tags,tags;
-autocmd FileType javascript setlocal ts=2 sw=2 tw=100 ai et cindent si
+autocmd FileType {javascript,typescript} setlocal ts=2 sw=2 tw=100 ai et cindent si
 autocmd FileType {llvm,tablegen} setlocal ts=2 sw=2 tw=80 ai et nosi
 autocmd FileType mail setlocal ai et nosi tw=76 spell
 autocmd FileType text setlocal ai nosi tw=80 spell
 autocmd FileType *tex setlocal ai et nosi tw=80 spell
 autocmd FileType *tex let _=matchadd('ErrorMsg', '[^\x00-\x7f]', -1)
-autocmd FileType {html,xml} setlocal ai et nosi tw=80 spell
-                               \ | runtime macros/matchit.vim
 autocmd FileType make setlocal noet
 
 if has("gui_running")
   set guioptions-=T     " don't need to see toolbar buttons
   set lines=40 columns=90
 
-  if (has("win32"))
-    set guifont=Ubuntu_Mono:h14:cANSI
-
-    " make shift-insert paste (well, as long as MiddleMouse pastes)
-    map! <S-Insert> <MiddleMouse>
-  elseif has("mac")
+  if has("mac")
     set guifont=Hack\ Regular:h14
-  else
-    set guifont=Hack\ 13
   endif
 endif
 
