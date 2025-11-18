@@ -1,4 +1,4 @@
-theme = "molokai"
+theme = "autumn"
 
 [editor]
 cursorline = true
